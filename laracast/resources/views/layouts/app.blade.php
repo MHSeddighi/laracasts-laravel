@@ -48,9 +48,11 @@
                 </svg>
             </button>
             @auth
-                <a class="p-1 ms-1" href="/">
+                <a class="p-1 ms-1 profile-show" href="#" data-bs-toggle="modal"
+                data-bs-target="#profile">
                     <img class="border-radius-2" src="images/default-avatar.png " width="40" height="40" />
                 </a>
+                <div class="py-6 px-4 text-white modal" id="profile">@include('layouts.profile')</div>
             @endauth
             
             @guest
