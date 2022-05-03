@@ -3,7 +3,6 @@
 use App\Http\Controllers\LoginUserController;
 use App\Http\Controllers\RegisterUserController;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Http\Request;
 
 Route::get('/register',[RegisterUserController::class,'create'])
     ->middleware('guest')

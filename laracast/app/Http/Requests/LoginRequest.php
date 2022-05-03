@@ -2,6 +2,10 @@
 
 namespace App\Http\Requests;
 
+use App\Models\User;
+use Barryvdh\Debugbar\Facades\Debugbar;
+use Barryvdh\Debugbar\Twig\Extension\Debug;
+use Exception;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 
@@ -31,14 +35,14 @@ class LoginRequest extends FormRequest
     }
 
     public function authenticate(){
-        if(Auth::attempt($this->only('username','password'),$this->boolean('remember'))){
+        if(Auth::attempt(['username'=>$this->username,'password'=>$this->password],$this->boolean('remember'))){
             $this->session()->regenerate();
 
             return redirect()->intended();
         }
         
         return back()->withErrors([
-            'username'=> __('auth.failed')
+            'username'=> __('auth.failed'),
         ])->onlyInput('username');
     }
 }

@@ -15,7 +15,7 @@
             <input class="bg-light border-1 border-radius-1 px-3 w-100 mx-auto" id="username" name="username" type="text" autofocus><br><br>
 
             <label class="form-label" for="password">{{__('Password')}} :</label><br>
-            <input class="bg-light border-1 border-color border-radius-1 px-3 w-100 mx-auto mb-1" name="password" id="password" type="text">
+            <input class="bg-light border-1 border-color border-radius-1 px-3 w-100 mx-auto mb-1" name="password" id="password" type="password">
 
             <label class="form-check-label underline-hover" for="remember-me">{{__('Remember me')}}</label>
             <input class="mx-2 form-check-input" type="checkbox" id="remember-me" name="remember"><br><br>

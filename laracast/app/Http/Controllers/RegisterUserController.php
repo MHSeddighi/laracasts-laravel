@@ -6,8 +6,8 @@ use App\Http\Requests\LoginRequest;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules\Password;
 
 class RegisterUserController extends Controller
@@ -26,7 +26,7 @@ class RegisterUserController extends Controller
         $user=User::create([
             'username'=> $request->username,
             'email'=> $request->email,
-            'password'=>  $request->password,
+            'password'=>  Hash::make($request->password),
         ]);
 
         event(new Registered($user));

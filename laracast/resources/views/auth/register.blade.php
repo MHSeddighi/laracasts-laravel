@@ -27,10 +27,10 @@
                 <input class="bg-light border-1 border-radius-2 px-3 py-1" name="email" id="email" type="text" value="{{ old('email') }}"><br><br>
 
                 <label class="col-md-4 form-label" for="password">{{__('Password')}}</label>
-                <input class="bg-light border-1 border-radius-2 px-3 py-1" name="password" id="password" type="text" value="{{ old('password') }}"><br><br>
+                <input class="bg-light border-1 border-radius-2 px-3 py-1" name="password" id="password" type="password" value="{{ old('password') }}"><br><br>
 
                 <label class="col-md-4 form-label" for="confirm-password">{{__('Confirm password')}}</label>
-                <input name="password_confirmation" class="bg-light border-1 border-radius-2 px-3 py-1" id="confirm-password" type="text"><br><br>
+                <input name="password_confirmation" class="bg-light border-1 border-radius-2 px-3 py-1" id="confirm-password" type="password"><br><br>
 
                 <hr>
                 <button class="btn submit btn-primary fs-5 align-item-center" id="submit">
