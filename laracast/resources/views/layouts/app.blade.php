@@ -52,7 +52,7 @@
                 data-bs-target="#profile">
                     <img class="border-radius-2" src="images/default-avatar.png " width="40" height="40" />
                 </a>
-                <div class="py-6 px-4 text-white modal" id="profile">@include('layouts.profile')</div>
+                <div class="modal" id="profile">@include('layouts.profile')</div>
             @endauth
             
             @guest

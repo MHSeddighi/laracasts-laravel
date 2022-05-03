@@ -5,7 +5,7 @@
         <img id="home-banner" class="img-responsive" src="images/home-banner-illustration.svg"
             alt="Screencasts for the modern developer" />
 
-        <div id="code-link" class="px-3 pt-2 font-bold text-white mt-0 ">
+        <div class="px-3 pt-2 font-bold text-white mt-0 code-link">
             <span class="ml-10 font-red">"menu"</span>=>[
             <a class="my-1 relative d-block" href="#">
                 <div class="font-size-10 font-gray">//deep dives</div>

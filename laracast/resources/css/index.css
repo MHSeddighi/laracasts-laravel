@@ -36,7 +36,7 @@
     color: white;
 }
 
-#code-link {
+.code-link {
     padding-bottom: 100px;
     background-color: #0D131D;
     border-radius: 10px;
@@ -44,13 +44,13 @@
     letter-spacing: 1.4px;
 }
 
-#code-link a {
+.code-link a {
     text-decoration: none;
     padding-left: 10px;
     padding-right: 80px;
 }
 
-#code-link a::before {
+.code-link a::before {
     background: linear-gradient(180deg, #151c26 45%, transparent 0, transparent 55%, #151c26 0);
     border-radius: 4px;
     content: "";
@@ -61,11 +61,11 @@
     width: 4px;
 }
 
-#code-link a:hover:before {
+.code-link a:hover:before {
     background: linear-gradient(180deg, #1156c5 45%, transparent 0, transparent 55%, #1156c5 0);
 }
 
-#code-link a:hover {
+.code-link a:hover {
     color: white;
     background-color: #1156c5;
     border-radius: 4px;
