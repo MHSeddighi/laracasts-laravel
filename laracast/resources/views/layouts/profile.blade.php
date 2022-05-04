@@ -1,7 +1,9 @@
 <style>
     .line {
         width: 1px;
-        background-color: black;
+        background-color: var(--bs-gray-900);
+        margin-bottom: 20px;
+        margin-top: 15px;
     }
 
     .modal-profile {
@@ -31,6 +33,7 @@
 
     .profile-menu a {
         text-decoration: none;
+        position: relative;
         padding-left: 10px;
         padding-right: 80px;
     }
@@ -42,7 +45,7 @@
         display: block;
         height: 100%;
         position: absolute;
-        left: -5px;
+        left: -23px;
         width: 4px;
     }
 
@@ -50,11 +53,16 @@
         background: linear-gradient(180deg, #1156c5 45%, transparent 0, transparent 55%, #1156c5 0);
     }
 
-    .profile-menu a > *{
-        color:white;
+    .profile-menu a>* {
+        color: white;
     }
-    .profile-menu a:hover > *{
-        color: blue;
+
+    .profile-menu a:hover>* {
+        color: #3399ff;
+    }
+
+    .modal .modal-dialog {
+        transform:translate(50px,0);
     }
 </style>
 
@@ -68,12 +76,12 @@
                     <span class="font-size-10 font-gray">//new content for you</span>
                 </a>
 
-                <a class="my-1" href="#">
+                <a class="mb-1" href="#">
                     <div class="fs-5 ">My Library</div>
                     <span class="font-size-10 font-gray">//keep going</span>
                 </a>
 
-                <a class="my-1" href="#">
+                <a class="mb-1" href="#">
                     <div class="fs-5 ">Social Feed</div>
                     <span class="font-size-10 font-gray">//new from the community</span>
                 </a>

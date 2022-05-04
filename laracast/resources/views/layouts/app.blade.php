@@ -21,6 +21,7 @@
 
     <!-- Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/favicon-32x32.webp') }}">
 </head>
 <body>
     <nav class="navbar justify-content-center navbar-background m-0">
@@ -52,7 +53,7 @@
                 data-bs-target="#profile">
                     <img class="border-radius-2" src="images/default-avatar.png " width="40" height="40" />
                 </a>
-                <div class="modal" id="profile">@include('layouts.profile')</div>
+                <div class="modal" id="profile" >@include('layouts.profile')</div>
             @endauth
             
             @guest
