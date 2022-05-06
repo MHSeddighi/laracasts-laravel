@@ -60,10 +60,6 @@
     .profile-menu a:hover>* {
         color: #3399ff;
     }
-
-    .modal .modal-dialog {
-        transform:translate(50px,0);
-    }
 </style>
 
 <div class="modal-dialog">
@@ -101,10 +97,13 @@
                     <span class="font-size-10 font-gray">//from the kidness of yout <3 </span>
                 </a>
 
-                <a class="my-1" href="#">
+                <a class="my-1" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-request').submit();">
                     <div class="fs-5 ">Logout</div>
                     <span class="font-size-10 font-gray">//but...why?</span>
                 </a>
+                <form id="logout-request" method="post" action="{{ route('logout') }}" class="hidden">
+                    @csrf
+                </form>
             </div>
             <div class="line"></div>
             <div>

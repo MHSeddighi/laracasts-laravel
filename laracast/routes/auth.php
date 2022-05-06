@@ -22,3 +22,6 @@ Route::get('/login',[LoginUserController::class,'create'])
 
 Route::view('/dashbord','dashbord')->name('dashbord');
 
+Route::post('/logout',[LoginUserController::class,'destroy'])
+    ->middleware('auth')
+    ->name('logout');

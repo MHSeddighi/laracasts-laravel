@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,7 +12,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-
+    
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -23,6 +24,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/favicon-32x32.webp') }}">
 </head>
+
 <body>
     <nav class="navbar justify-content-center navbar-background m-0">
         <a class="navbar-brand" href="#">
@@ -42,33 +44,32 @@
             <a class="navbar-brand me-auto" href="#">
                 <img class="" src="images/logo-white.svg " width="145" height="17" />
             </a>
-            <button class=" btn-search border-radius-3" type="button" data-bs-toggle="modal"
-                data-bs-target="#searchId">
+            <button class=" btn-search border-radius-3" type="button" data-bs-toggle="modal" data-bs-target="#searchId">
                 <svg fill="#fff" width="16px" height="16px" viewBox="0 0 15 15">
                     <use xlink:href="images/icons.svg#icon-search"></use>
                 </svg>
             </button>
             @auth
-                <a class="p-1 ms-1 profile-show" href="#" data-bs-toggle="modal"
-                data-bs-target="#profile">
-                    <img class="border-radius-2" src="images/default-avatar.png " width="40" height="40" />
-                </a>
-                <div class="modal" id="profile" >@include('layouts.profile')</div>
+            <a class="p-1 ms-1 profile-show" onclick="showProfile()" href="#" data-bs-toggle="modal" data-bs-target="#profile">
+                <img class="border-radius-2" src="images/default-avatar.png " width="40" height="40" />
+            </a>
+            <div class="modal" id="profile">@include('layouts.profile')</div>
             @endauth
-            
+
             @guest
-                <a href="/login" class="btn mx-2 btn-outline-primary">
-                    {{__('Login')}}
-                </a>
-                <a href="/register" class="btn mx-2 btn-outline-primary ">
-                    {{__('Register')}}
-                </a>
+            <a href="/login" class="btn mx-2 btn-outline-primary">
+                {{__('Login')}}
+            </a>
+            <a href="/register" class="btn mx-2 btn-outline-primary ">
+                {{__('Register')}}
+            </a>
             @endguest
-            
+
             @yield('header-navbar')
     </nav>
-        <main>
-            @yield('content')
-        </main>
+    <main>
+        @yield('content')
+    </main>
 </body>
+
 </html>
