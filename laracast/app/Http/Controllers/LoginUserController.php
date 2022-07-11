@@ -8,9 +8,16 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginUserController extends Controller
 {
-    
-    public function __construct(){
-        $this->middleware('guest')->except('logout');
+
+    public function destroy(Request $request){
+        
+        Auth::guard('web')->logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/');
     }
 
     public function create(){
@@ -21,14 +28,6 @@ class LoginUserController extends Controller
         return $request->authenticate();
     }
 
-    public function destory(Request $request){
-        Auth::guard('web')->logout();
-
-        $request->session()->invalidate();
-
-        $request->session()->regenerateToken();
-
-        return redirect('/');
-    }
+   
 
 }
