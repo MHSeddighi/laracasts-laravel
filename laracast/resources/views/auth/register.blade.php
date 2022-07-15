@@ -1,7 +1,3 @@
-@extends('layouts.app')
-
-@section('content')
-
 <div class="container mx-auto my-5 col-md-8" >
     <div class="card p-4 bg-light border-radius-2 shadow-sm" style="filter:opacity(80%) blure(5px);">
 
@@ -40,6 +36,3 @@
         </div>
     </div>
 </div>
-
-
-@endsection

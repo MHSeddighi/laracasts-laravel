@@ -50,19 +50,23 @@
                 </svg>
             </button>
             @auth
-            <a class="p-1 ms-1 profile-show" href="#" data-bs-toggle="modal" data-bs-target="#profile">
+            <a class="p-1 ms-1" href="#" data-bs-toggle="modal" data-bs-target="#profile">
                 <img class="border-radius-2" src="images/default-avatar.png " width="40" height="40" />
             </a>
             <div class="modal" id="profile">@include('layouts.profile')</div>
             @endauth
 
             @guest
-            <a href="/login" class="btn mx-2 btn-outline-primary">
-                {{__('Login')}}
-            </a>
-            <a href="/register" class="btn mx-2 btn-outline-primary ">
-                {{__('Register')}}
-            </a>
+            <button class="btn mx-2 btn-outline-primary" data-bs-toggle="modal" data-bs-target="#login-form">
+                {{__('SIGN IN')}}
+            </button>
+            <button class="btn mx-2 btn-outline-primary" data-bs-toggle="modal" data-bs-target="#register-form">
+                {{__('SIGN UP')}}
+            </button>
+
+            <div class="modal" id="login-form">@include('auth.login')</div>
+            <div class="modal" id="register-form">@include('auth.register')</div>
+
             @endguest
 
             @yield('header-navbar')

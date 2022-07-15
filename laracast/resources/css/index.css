@@ -229,3 +229,19 @@ input::-webkit-search-cancel-button:hover {
     color:#0d6dfd83;
     border-color: #0d6dfd83;
 }
+
+
+/* login */
+
+.login-form {
+    background: rgba(255, 255, 255, 1);
+    width: 30%;
+    border-radius: 40px;
+    font-weight: 900;
+    font-size: 10pt;
+}
+
+.login-input {
+    height: 50px;
+    font-size: 12pt;
+}
