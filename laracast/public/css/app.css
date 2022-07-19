@@ -11287,6 +11287,12 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+@font-face {
+    font-family: cabinet;
+    src: url(https://www.fontshare.com/?q=cabinet);
+    font-size: large;
+}
+
 @-webkit-keyframes popup{
     from{
         display: none;
@@ -11546,15 +11552,114 @@ input::-webkit-search-cancel-button:hover {
 /* login */
 
 .login-form {
+    position: fixed;
+    left:50%;
+    transform:translateX(-50%);
+    border-radius:15px;
+    height:80%;
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+    pointer-events: auto;
+    background:#fff;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    outline: 0;
     background: rgba(255, 255, 255, 1);
     width: 30%;
-    border-radius: 40px;
     font-weight: 900;
     font-size: 10pt;
 }
 
 .login-input {
-    height: 50px;
+    height: 45px;
     font-size: 12pt;
+    width:100%;
+    accent-color: blue;
+}
+
+.login-button{
+    position:relative;
+    text-align:center;
+    height:45px;
+}
+
+.login-google-button {
+    position:relative;
+    text-align:center;
+    height:45px;
+    background:url(/images/google.svg?17675d09a4cae94c6a9a17e1b164b180);
+    background-position: center left 10px;
+    background-repeat: no-repeat;
+    background-size: 20px;
+}
+
+.login-facebook-button {
+    position:relative;
+    text-align:center;
+    height:45px;
+    background:url(/images/facebook.svg?e21fdd88373c3c2e5be8f200f6936cb9);
+    background-position: center left 10px;
+    background-repeat: no-repeat;
+    background-size: 18px;
+}
+
+
+.login-button .span{
+    position:absolute;
+    align-self:center;
+}
+
+
+.line{
+    position: relative;
+}
+
+.line::before{
+    content:"";
+    height:1px;
+    width:100%;
+    display:block;
+    background: rgb(116, 113, 113);
+}
+
+.line span{
+    position: absolute;
+    background:rgb(255, 255, 255);
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+    opacity:0.75;
+    width:45px;
+}
+
+/*registe form*/
+
+.register-form {
+    position: fixed;
+    left:50%;
+    transform:translateX(-50%);
+    border-radius:15px;
+    width:50%;
+    height:90%;
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+    pointer-events: auto;
+    background:#fff;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    outline: 0;
+    background: rgba(255, 255, 255, 1);
+    width: 30%;
+    font-weight: 900;
+    font-size: 10pt;
+}
+
+.register-input{
+    height: 45px;
+    font-size: 12pt;
+    width:100%;
+    padding:5 5 5 5;
+    accent-color: blue;
 }
 
