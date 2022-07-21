@@ -85,8 +85,8 @@
                 <span class="font-size-10">Videos</span>
             </div>
         </div>
-        <button class="btn rounded-pill d-none w-75 mx-auto mt-2 d-flex" style="background-color: #EBEDF1;">
-            <svg class="align-middle" width="15px" height="15px" fill="#aaa">
+        <button class="btn rounded-pill d-none" style="background-color: #EBEDF1;">
+            <svg class="align-middle" width="15px" height="15px" fill="#000">
                 <use xlink:href="images/play-button.svg#Capa_1"></use>
             </svg>
             <span>
@@ -111,8 +111,8 @@
                 <span class="font-size-10">Videos</span>
             </div>
         </div>
-        <button class="btn rounded-pill d-none w-75 mx-auto mt-2 d-flex" style="background-color: #EBEDF1;">
-            <svg class="align-middle" width="15px" height="15px" fill="#aaa">
+        <button class="btn rounded-pill d-none" style="background-color: #EBEDF1;">
+            <svg class="align-middle" width="15px" height="15px" fill="#000">
                 <use xlink:href="images/play-button.svg#Capa_1"></use>
             </svg>
             <span>
@@ -137,8 +137,8 @@
                 <span class="font-size-10">Videos</span>
             </div>
         </div>
-        <button class="btn rounded-pill d-none w-75 mx-auto mt-2 d-flex" style="background-color: #EBEDF1;">
-            <svg class="align-middle" width="15px" height="15px" fill="#aaa">
+        <button class="btn rounded-pill d-none" style="background-color: #EBEDF1;">
+            <svg class="align-middle" width="15px" height="15px" fill="#000">
                 <use xlink:href="images/play-button.svg#Capa_1"></use>
             </svg>
             <span>
@@ -163,8 +163,8 @@
                 <span class="font-size-10">Videos</span>
             </div>
         </div>
-        <button class="btn rounded-pill d-none w-75 mx-auto mt-2 d-flex" style="background-color: #EBEDF1;">
-            <svg class="align-middle" width="15px" height="15px" fill="#aaa">
+        <button class="btn rounded-pill d-none" style="background-color: #EBEDF1;">
+            <svg class="align-middle" width="15px" height="15px" fill="#000">
                 <use xlink:href="images/play-button.svg#Capa_1"></use>
             </svg>
             <span>
@@ -189,8 +189,8 @@
                 <span class="font-size-10">Videos</span>
             </div>
         </div>
-        <button class="btn rounded-pill d-none w-75 mx-auto mt-2 d-flex" style="background-color: #EBEDF1;">
-            <svg class="align-middle" width="15px" height="15px" fill="#aaa">
+        <button class="btn rounded-pill d-none">
+            <svg class="align-middle" width="15px" height="15px" fill="#000">
                 <use xlink:href="images/play-button.svg#Capa_1"></use>
             </svg>
             <span>
@@ -206,7 +206,7 @@
     on your favorite web technologies and techniques.
 </div>
 
-
+@include('course-cards')
 
 <div class="py-3 text-center" style="font-size:15px;font-weight: 500;">
     <div style="font-size:30px;">Explore Laracasts</div>
@@ -214,5 +214,6 @@
     from frameworks to packages to tools.
 </div>
 
+@include('topic-cards')
 
 @endsection
