@@ -11621,9 +11621,7 @@ input::-webkit-search-cancel-button:hover {
     position: relative;
     text-align: center;
     height: 45px;
-    background: url(/images/facebook.svg?e21fdd88373c3c2e5be8f200f6936cb9);
-    background-position: center left 10px;
-    background-repeat: no-repeat;
+    background: url(/images/facebook.svg?e21fdd88373c3c2e5be8f200f6936cb9) no-repeat center left 10px;
     background-size: 18px;
 }
 
@@ -11700,4 +11698,5 @@ input::-webkit-search-cancel-button:hover {
     outline: none;
     border-bottom: solid 4px rgb(53, 100, 201);
 }
+
 

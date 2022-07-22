@@ -19,19 +19,31 @@ class CourseCard extends Component
     public $type;
     public $difficulty;
     public $content;
+    public $width;
 
-    public function __construct(String $imageSource="",String $imageBackgroud="",String $title=null,String $time="",int $lessonNumbers=null,String $type="",String $difficulty="",String $content="")
-    {   
-        $this->imageSource=$imageSource;
-        $this->imageBackgroud=$imageBackgroud;
-        $this->$time=$time;
-        $this->lessonNumbers=$lessonNumbers;
-        $this->title=$title;
-        $this->type=$type;
-        $this->difficulty=$difficulty;
-        $this->content=$content;
-    }   
-
+    /**
+     * @param $imageSource
+     * @param $imageBackground
+     * @param $title
+     * @param $time
+     * @param $lessonNumbers
+     * @param $type
+     * @param $difficulty
+     * @param $content
+     * @param $width
+     */
+    public function __construct($imageSource=null, $imageBackground=null, $title=null, $time=null, $lessonNumbers=null, $type=null, $difficulty=null, $content=null, $width=null)
+    {
+        $this->imageSource = $imageSource;
+        $this->imageBackground = $imageBackground;
+        $this->title = $title;
+        $this->time = $time;
+        $this->lessonNumbers = $lessonNumbers;
+        $this->type = $type;
+        $this->difficulty = $difficulty;
+        $this->content = $content;
+        $this->width = $width;
+    }
 
 
     /**
