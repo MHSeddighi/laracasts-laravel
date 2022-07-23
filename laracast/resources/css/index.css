@@ -1,8 +1,4 @@
-@font-face {
-    font-family: cabinet;
-    src: url(https://www.fontshare.com/?q=cabinet);
-    font-size: large;
-}
+@import "fonts.css";
 
 @keyframes popup {
     from {
@@ -16,13 +12,9 @@
     }
 }
 
-* {
-    box-sizing: border-box;
-
-}
-
 .underline-hover:hover {
-    text-decoration: underline;
+    text-decoration: underline !important;
+    cursor: pointer;
 }
 
 .navbar-background {
@@ -52,7 +44,7 @@
 }
 
 .code-link a {
-    text-decoration: none;
+    text-decoration:none;
     padding-left: 10px;
     padding-right: 80px;
 }
@@ -146,6 +138,10 @@ input::-webkit-search-cancel-button:hover {
     background: #2c4369;
 }
 
+.bg-blue {
+    background: #2c4369;
+}
+
 .overflow-x-hidden {
     overflow-x: hidden;
 }
@@ -173,6 +169,14 @@ input::-webkit-search-cancel-button:hover {
 
 .font-size-10 {
     font-size: 10px;
+}
+
+.font-size-11 {
+    font-size: 11px;
+}
+
+.font-size-12 {
+    font-size: 12px;
 }
 
 .font-gray {
@@ -384,4 +388,74 @@ input::-webkit-search-cancel-button:hover {
     border: 0;
     outline: none;
     border-bottom: solid 4px rgb(53, 100, 201);
+
+}
+
+/*course cards*/
+.w-33{
+    width:33%;
+}
+
+.w-67{
+    width:67%;
+}
+
+.h-15{
+    height:15% !important;
+}
+
+.h-85{
+    height:85% !important;
+}
+
+
+.play-button:hover> div > div{
+    display: none;
+    background:#000;
+}
+
+.play-button:hover > div > button{
+    display: block !important;
+    animation: popup 0.3s linear;
+}
+
+.play-button > div > button{
+    background-color: #EBEDF1;
+    display:flex;
+    flex-direction: row;
+    border: solid 1px transparent;
+}
+
+.margin-1{
+    margin:1px;
+}
+
+.play-button > div > button:hover{
+    border: solid 1px blue;
+    color:blue;
+    transition: color,border 0.3s;
+}
+
+.play-button > div > button:hover svg{
+    fill:blue;
+    transition: fill 0.3s;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+.type-btn{
+    border-radius: 12px;
+    outline:none;
+    border:0;
+    padding: 4px;
+    background: rgba(75, 71, 71, 0.2);
+    color:#fff;
+}
+
+.type-btn:hover{
+    background: #fafafa;
+    color: #504848;
+    transition:background,color 0.2s;
 }
