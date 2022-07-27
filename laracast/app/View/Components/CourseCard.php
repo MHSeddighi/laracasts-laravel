@@ -20,6 +20,7 @@ class CourseCard extends Component
     public $difficulty;
     public $content;
     public $width;
+    public $height;
 
     /**
      * @param $imageSource
@@ -32,7 +33,7 @@ class CourseCard extends Component
      * @param $content
      * @param $width
      */
-    public function __construct($imageSource=null, $imageBackground=null, $title=null, $time=null, $lessonNumbers=null, $type=null, $difficulty=null, $content=null, $width=null)
+    public function __construct($imageSource=null, $imageBackground=null, $title=null, $time=null, $lessonNumbers=null, $type=null, $difficulty=null, $content=null, $width=null,$height=null)
     {
         $this->imageSource = $imageSource;
         $this->imageBackground = $imageBackground;
@@ -43,6 +44,7 @@ class CourseCard extends Component
         $this->difficulty = $difficulty;
         $this->content = $content;
         $this->width = $width;
+        $this->height=$height;
     }
 
 

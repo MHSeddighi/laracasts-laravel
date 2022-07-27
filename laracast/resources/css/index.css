@@ -400,29 +400,45 @@ input::-webkit-search-cancel-button:hover {
     width:67%;
 }
 
+.w-2{
+    width:1rem;
+}
+
+.h-1{
+    height:0.25rem;
+}
+
 .h-15{
     height:15% !important;
+}
+
+.h-17{
+    height:calc(100% / 6) !important;
 }
 
 .h-85{
     height:85% !important;
 }
 
-
-.play-button:hover> div > div{
-    display: none;
-    background:#000;
+.max-h-100{
+    max-height: 100px;
 }
 
-.play-button:hover > div > button{
+
+.play-button:hover > div{
+    visibility:hidden;
+}
+
+.play-button:hover > button{
     display: block !important;
     animation: popup 0.3s linear;
 }
 
-.play-button > div > button{
+.play-button > button{
+    position:absolute;
+    bottom: 0;
+    width:100%;
     background-color: #EBEDF1;
-    display:flex;
-    flex-direction: row;
     border: solid 1px transparent;
 }
 
@@ -430,13 +446,13 @@ input::-webkit-search-cancel-button:hover {
     margin:1px;
 }
 
-.play-button > div > button:hover{
+.play-button > button:hover{
     border: solid 1px blue;
     color:blue;
     transition: color,border 0.3s;
 }
 
-.play-button > div > button:hover svg{
+.play-button > button:hover svg{
     fill:blue;
     transition: fill 0.3s;
 }
@@ -458,4 +474,8 @@ input::-webkit-search-cancel-button:hover {
     background: #fafafa;
     color: #504848;
     transition:background,color 0.2s;
+}
+
+.hidden{
+    visibility:hidden;
 }

@@ -1,42 +1,34 @@
-<div class=" container-fluid row">
-    <div class="col-md-4">
+<div class="container-fluid row">
+    <div class="col-md-4 d-flex flex-column justify-content-between">
         <div class="d-flex flex-row gap-4">
             <x-coursecard width="50%" imageSource="https://laracasts.nyc3.cdn.digitaloceanspaces.com/series/thumbnails/svelte-crash-course.png" imageBackground="background:linear-gradient(180deg,#f44881,#ec454f);" />
             <x-coursecard width="50%" imageSource="https://laracasts.nyc3.cdn.digitaloceanspaces.com/series/thumbnails/livewire-uncovered.png" imageBackground="background:linear-gradient(180deg,#f44881,#ec454f);" />
         </div>
         <x-coursecard width="100%" imageSource="https://laracasts.nyc3.cdn.digitaloceanspaces.com/series/thumbnails/learn-laravel-forge.png" imageBackground="background:linear-gradient(0deg,#8b60ed,#b372bd);" title="Learn Laravel forge (2022 Edition)" lessonsNumber="24" time="1h 52m" />
-        <x-coursecard width="100%" imageSource="https://laracasts.nyc3.cdn.digitaloceanspaces.com/series/thumbnails/css-grids-simplified.png" imageBackground="background:linear-gradient(0deg,#f19a1a,#ffc73c);" type="LANGUAGES" time="1h 29m" lessonsNumber="12" difficulty="Intermediate" title="Css Grid Simplified" content="Grid is one of the most powerful tools in CSS, but also the most confusing one. Once you master creating layouts with CSS grids, you’ll wonder how you lived without it.In this course, we'll use real world" />
+        <x-coursecard width="100%" imageSource="https://laracasts.nyc3.cdn.digitaloceanspaces.com/series/thumbnails/css-grids-simplified.png" imageBackground="background:linear-gradient(0deg,#f19a1a,#ffc73c);" type="LANGUAGES" time="1h 29m" lessonsNumber="12" difficulty="Intermediate" title="Css Grid Simplified" content="Grid is one of the most powerful tools in CSS, but also the most confusing one. Once you master creating layouts with CSS grids, you’ll wonder how you lived without it.In this course, we'll use real world examples and layouts to learn about the CSS properties related to grid. Hopefully, by the conclusion of this series, you'll have a much better understanding of the finer details." />
         <div class="d-flex flex-row gap-4">
             <x-coursecard width="50%" imageSource="https://laracasts.nyc3.cdn.digitaloceanspaces.com/series/thumbnails/learn-vue-3.png" imageBackground="background:linear-gradient(180deg,#f44881,#ec454f);" />
             <x-coursecard width="50%" imageSource="https://laracasts.nyc3.cdn.digitaloceanspaces.com/series/thumbnails/react-beyond-the-basics.png" imageBackground="background:linear-gradient(180deg,#f44881,#ec454f);" />
         </div>
-        <x-coursecard width="100%" imageSource="https://laracasts.nyc3.cdn.digitaloceanspaces.com/series/thumbnails/wordle-workshop.png" imageBackground="background:linear-gradient(0deg,#8b60ed,#b372bd);" title="World Workshop" lessonsNumber="17" time="2h 21m" />
+        <x-coursecard width="100%" imageSource="https://laracasts.nyc3.cdn.digitaloceanspaces.com/series/thumbnails/wordle-workshop.png" imageBackground="background:linear-gradient(0deg,#f19a1a,#ffc73c);" title="World Workshop" lessonsNumber="17" time="2h 21m" />
     </div>
-    <div class="col-md-4">
-        <div class="d-flex flex-row">
-            <x-coursecard width="50%" imageSource="https://laracasts.nyc3.cdn.digitaloceanspaces.com/series/thumbnails/svelte-crash-course.png" imageBackground="background:linear-gradient(180deg,#f44881,#ec454f);" />
-            <x-coursecard width="50%" imageSource="https://laracasts.nyc3.cdn.digitaloceanspaces.com/series/thumbnails/livewire-uncovered.png" imageBackground="background:linear-gradient(180deg,#f44881,#ec454f);" />
-        </div>
-        <x-coursecard width="100%" imageSource="https://laracasts.nyc3.cdn.digitaloceanspaces.com/series/thumbnails/learn-laravel-forge.png" imageBackground="background:linear-gradient(0deg,#8b60ed,#b372bd);" title="Learn Laravel forge (2022 Edition)" lessonsNumber="24" time="1h 52m" />
-        <x-coursecard width="100%" imageSource="https://laracasts.nyc3.cdn.digitaloceanspaces.com/series/thumbnails/css-grids-simplified.png" imageBackground="background:linear-gradient(0deg,#f19a1a,#ffc73c);" type="LANGUAGE" time="1h 29m" lessonsNumber="12" difficulty="Intermediate" title="Css Grid Simplified" content="Grid is one of the most powerful tools in CSS, but also the most confusing one. Once you master creating layouts with CSS grids, you’ll wonder how you lived without it.In this course, we'll use real world" />
-        <div class="d-flex flex-row">
-            <x-coursecard width="50%" imageSource="https://laracasts.nyc3.cdn.digitaloceanspaces.com/series/thumbnails/learn-vue-3.png" imageBackground="background:linear-gradient(180deg,#f44881,#ec454f);" />
-            <x-coursecard width="50%" imageSource="https://laracasts.nyc3.cdn.digitaloceanspaces.com/series/thumbnails/react-beyond-the-basics.png" imageBackground="background:linear-gradient(180deg,#f44881,#ec454f);" />
-        </div>
-        <x-coursecard width="100%" imageSource="https://laracasts.nyc3.cdn.digitaloceanspaces.com/series/thumbnails/wordle-workshop.png" imageBackground="background:linear-gradient(0deg,#8b60ed,#b372bd);" title="World Workshop" lessonsNumber="17" time="2h 21m" />
+
+    <div class="col-md-4 d-flex flex-column justify-content-between">
+        <x-coursecard width="100%" imageSource="	https://laracasts.nyc3.cdn.digitaloceanspaces.com/series/thumbnails/nuxt-js-crash-course.png" imageBackground="background:linear-gradient(180deg,#f44881,#ec454f);" title="NuxtJS Crash Course" type="FRAMEWORKS" difficulty="Intermediate" lessonsNumber="11" time="2h 33m" content="NuxtJS is a framework on top of Vue that allows your application to be server-side rendered via Node.js. This allows for better SEO, but still has all the benefits of a fully interactive JavaScript application.In this series, we'll take a look at using Nuxt 3 and all the features it has to offer including automatic routing, better TypeScript support, Vite support, the Nitro server and more. We'll pair it together with an API powered by Laravel on the backend to build out the obligatory blog application. This will allow us to learn how to communicate between the front-end and the back-end." />
+        <x-coursecard width="100%" imageSource="	https://laracasts.nyc3.cdn.digitaloceanspaces.com/series/thumbnails/modern-javascript-basics.png" imageBackground="background:linear-gradient(0deg,#f19a1a,#ffc73c);" time="1h 12m" lessonsNumber="10" type="LANGUAGES" difficulty="Beginner" title="Modern JavaScript Basics" content="Grid is one of the most powerful tools in CSS, but also the most confusing one. Once you master creating layouts with CSS grids, you’ll wonder how you lived without it.In this course, we'll use real world." />
+        <x-coursecard width="100%" imageSource="	https://laracasts.nyc3.cdn.digitaloceanspaces.com/series/thumbnails/whats-new-in-laravel-9.png" imageBackground="background:linear-gradient(180deg,#f44881,#ec454f);" title="What's New in Laravel 9" lessonsNumber="11" time="44m" type="FRAMEWORKS" difficulty="Intermediate" content="Laravel 9 is here, and along with it comes a wide array of useful new features and tweaks. This includes an improved accessor/mutator API, better support for Enum casting, forced scope bindings, a new database engine for Laravel Scout, and so much more.If you have 45 minutes to spare, I'll show you everything you need to know to get up to speed."/>
+
     </div>
-    <div class="col-md-4">
+
+    <div class="col-md-4 d-flex flex-column justify-content-between">
+        <x-coursecard width="100%" imageSource="https://laracasts.nyc3.cdn.digitaloceanspaces.com/series/thumbnails/nuxt-js-crash-course.png" imageBackground="background:linear-gradient(180deg,#f44881,#ec454f);" title="Let's Build an Offline-First Vue App" lessonsNumber="10" time="1h 52m" />
+        <x-coursecard width="100%" imageSource="https://laracasts.nyc3.cdn.digitaloceanspaces.com/series/thumbnails/modern-javascript-basics.png" imageBackground="background:linear-gradient(0deg,#f19a1a,#ffc73c);" title="Intricacies of Sending an Invoice" lessonsNumber="5" time="38m"/>
+        <x-coursecard width="100%" imageSource="https://laracasts.nyc3.cdn.digitaloceanspaces.com/series/thumbnails/whats-new-in-laravel-9.png" imageBackground="background:linear-gradient(180deg,#f44881,#ec454f);" time="59m" lessonsNumber="8" title="Advanced Image Uploading with Vue and Laravel" />
+        <x-coursecard width="100%" imageSource="    https://laracasts.nyc3.cdn.digitaloceanspaces.com/series/thumbnails/graphql-with-laravel-and-vue.png" imageBackground="background: linear-gradient(0deg,#8b60ed,#b372bd);" title="GraphQL with Laravel and Vue" difficulty="Advanced" type="Tooling"    lessonsNumber="16" time="2h 56m" content="GraphQL is often looked at as the successor to REST APIs. It provides a powerful query language and allows you to make requests for exactly the information you want, nothing more and nothing less. Many services now offer GraphQL APIs making it easier for users to interact with their data. With its powerful type system, the syntax is intuitive, and error messages provide helpful feedback. In this series, we’ll take a look at using GraphQL within the Laravel and Vue ecosystem. We’ll build out the obligatory blog as a full-stack GraphQL application. In the backend we’ll make use of the popular lighthouse package which allows us to define our GraphQL schema. In the frontend, we’ll leverage Vue Apollo to allow us to communicate with the backend and display the data in the browser."/>
         <div class="d-flex flex-row">
-            <x-coursecard width="50%" imageSource="https://laracasts.nyc3.cdn.digitaloceanspaces.com/series/thumbnails/svelte-crash-course.png" imageBackground="background:linear-gradient(180deg,#f44881,#ec454f);" />
-            <x-coursecard width="50%" imageSource="https://laracasts.nyc3.cdn.digitaloceanspaces.com/series/thumbnails/livewire-uncovered.png" imageBackground="background:linear-gradient(180deg,#f44881,#ec454f);" />
+            <x-coursecard width="50%" imageSource="https://laracasts.nyc3.cdn.digitaloceanspaces.com/series/thumbnails/inertia-and-spa-techniques.png" imageBackground="background:linear-gradient(180deg,#f44881,#ec454f);" />
+            <x-coursecard width="50%" imageSource="images/course cards/mobile-apps-with-react-native.png" imageBackground="background:linear-gradient(180deg,#f44881,#ec454f);" />
         </div>
-        <x-coursecard width="100%" imageSource="https://laracasts.nyc3.cdn.digitaloceanspaces.com/series/thumbnails/learn-laravel-forge.png" imageBackground="background:linear-gradient(0deg,#8b60ed,#b372bd);" title="Learn Laravel forge (2022 Edition)" lessonsNumber="24" time="1h 52m" />
-        <x-coursecard width="100%" imageSource="https://laracasts.nyc3.cdn.digitaloceanspaces.com/series/thumbnails/css-grids-simplified.png" imageBackground="background:linear-gradient(0deg,#f19a1a,#ffc73c);" type="LANGUAGE" time="1h 29m" lessonsNumber="12" difficulty="Intermediate" title="Css Grid Simplified" content="Grid is one of the most powerful tools in CSS, but also the most confusing one. Once you master creating layouts with CSS grids, you’ll wonder how you lived without it.In this course, we'll use real world" />
-        <div class="d-flex flex-row">
-            <x-coursecard width="50%" imageSource="https://laracasts.nyc3.cdn.digitaloceanspaces.com/series/thumbnails/learn-vue-3.png" imageBackground="background:linear-gradient(180deg,#f44881,#ec454f);" />
-            <x-coursecard width="50%" imageSource="https://laracasts.nyc3.cdn.digitaloceanspaces.com/series/thumbnails/react-beyond-the-basics.png" imageBackground="background:linear-gradient(180deg,#f44881,#ec454f);" />
-        </div>
-        <x-coursecard width="100%" imageSource="https://laracasts.nyc3.cdn.digitaloceanspaces.com/series/thumbnails/wordle-workshop.png" imageBackground="background:linear-gradient(0deg,#8b60ed,#b372bd);" title="World Workshop" lessonsNumber="17" time="2h 21m" />
     </div>
 
 </div>
