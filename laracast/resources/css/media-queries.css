@@ -1,0 +1,7 @@
+@media screen and (max-width:750px){
+
+    .home-footer div{
+        flex-direction: column;
+        text-align: center;
+    }
+}

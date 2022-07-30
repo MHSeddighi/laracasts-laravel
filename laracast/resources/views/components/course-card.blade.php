@@ -1,15 +1,15 @@
 <div class="border d-flex flex-row my-2 border-radius-3 bg-white font-poppins" style="width:{{ $width }};">
-    <div class="d-flex flex-column p-3 text-center border-radius-3 text-white fs-6 font-semibold {{ isset($title)?"w-33":"w-100"}}"  style="{{ $imageBackground }}">
+    <div class="d-flex flex-column p-2 text-center border-radius-3 text-white fs-6 font-semibold {{ isset($title)?"w-33":"w-100"}}"  style="{{ $imageBackground }}">
         @isset($type)
-            <button class="font-size-11 type-btn rounded-pill">{{ $type}} </button>
+            <button class="font-size-11 type-btn rounded-pill m-2">{{ $type}} </button>
         @endisset
             <img class="align-self-center {{ isset($type)? "my-4" :""}}" src="{{ $imageSource }}" width="96" height="96"/>
         @isset($difficulty)
-            <strong class="font-size-11">{{ $difficulty }} Difficulty</strong>
-            <div class="d-flex justify-content-center gap-1 mt-2">
+            <strong class="font-size-11">{{ $difficulty }} <br> Difficulty</strong>
+            <div class="d-flex justify-content-center gap-1 mt-2 mb-1">
                 <span class="d-inline-block w-2 h-1 rounded bg-white"></span>
                 <span class="d-inline-block w-2 h-1 rounded {{ strcasecmp($difficulty,"beginner")!=0 ? "bg-white":"bg-secondary opacity-50" }}"></span>
-                <span class="d-inline-block w-2 h-1 rounded {{ strcasecmp($difficulty,"beginner")!=0 && strcasecmp($difficulty,"intermediate")!=0 ? "bg-white":"bg-secondary opacity-50" }}"></span>
+                <span class="d-inline-block w-2 h-1 rounded {{ ((strcasecmp($difficulty,"beginner")!=0) and (strcasecmp($difficulty,"intermediate")!=0)) ? "bg-white":"bg-secondary opacity-50" }}"></span>
             </div>
         @endisset
     </div>

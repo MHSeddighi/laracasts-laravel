@@ -198,7 +198,7 @@
             </span>
         </button>
     </div>
-    
+
 </div>
 <div class="py-3 text-center" style="font-size:15px;font-weight: 500;">
     <div style="font-size:30px;">What will you learn next?</div>

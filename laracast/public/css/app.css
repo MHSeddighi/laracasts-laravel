@@ -11588,6 +11588,14 @@ textarea.form-control-lg {
     font-family: poppins;
 }
 
+@media screen and (max-width:750px){
+
+    .home-footer div{
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
 @-webkit-keyframes popup {
     from {
         display: none;
@@ -12092,5 +12100,42 @@ input::-webkit-search-cancel-button:hover {
 .hidden{
     visibility:hidden;
 }
+
+/* footer */
+
+.home-footer{
+    background-color:#2F4870;
+    padding: 0px 130px 20px 130px;
+}
+
+.footer-email{
+    background-image: url(/images/mic-drop@2x.webp?2341db089f3b1cd3ecf1611aee3ab56c);
+    background-position:top left;
+    background-repeat:no-repeat;
+    background-size:120px;
+    display:flex;
+    flex-direction: column;
+    min-width:70%;
+    margin:auto;
+}
+
+.footer-link a{
+    text-decoration: none;
+    color: #b0a7a7;
+}
+
+.footer-link a:hover{
+    color:#fafafa;
+    transition:color 0.2s;
+}
+
+.list-style-none{
+    list-style: none;
+}
+
+.flex-grow-2{
+    flex-grow:2;
+}
+
 
 

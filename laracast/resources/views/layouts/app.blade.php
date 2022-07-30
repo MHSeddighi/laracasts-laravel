@@ -12,7 +12,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -74,6 +74,67 @@
     <main>
         @yield('content')
     </main>
+    <section class="home-footer position-relative  overflow-hidden">
+        <img class="position-absolute" src="images/footer-gang.svg" style="top:0;bottom:0;right: -200px;z-inedx:-1;"/>
+        <div class="d-flex flex-column text-white gap-5 font-poppins pt-0">
+            <div class="footer-email gap-4">
+                <h2 class="text-center align-self-center mt-4" style="max-width:580px;">Want us to email you occasionally with Laracasts news?</h2>
+                <form class="align-self-center"  method="post">
+                    <input type="email" placeholder="Enter your email address" />
+                </form>
+            </div>
+            <div class="d-flex text-white gap-1">
+                <div class="flex-grow-2">
+                    <img src="images/logo-white.svg " width="180" height="25">
+                    <p class="mt-4" style="max-width: 400px">
+                        Nine out of ten doctors recommend Laracasts over competing brands. Come inside, see for yourself, and massively level up your development skills in the process.
+                    </p>
+                </div>
+                <div class="footer-link flex-grow-1">
+                    <h5 class="font-cabin">LEARN</h5>
+                    <ul class="list-style-none p-0 mt-2">
+                        <li><a href="https://laracasts.com/series">Series </a></li>
+                        <li><a href="https://laracasts.com/bits">Larabits </a></li>
+                        <li><a href="https://laracasts.com/browse">Topics </a></li>
+                        <li><a href="https://laracasts.com/week-in-review">What's New </a></li>
+                        <li><a href="#">Search </a></li>
+                        <li><a href="#">Commercial </a></li>
+                    </ul>
+
+                </div>
+
+                <div class="footer-link flex-grow-1">
+                    <h5 class="font-cabin">DISCUSS</h5>
+                    <ul class="list-style-none p-0 mt-2">
+                        <li><a href="https://laracasts.com/discuss">Forum </a></li>
+                        <li><a href="https://laracasts.com/podcast">Podcast </a></li>
+                        <li><a href="https://laracasts.com/blog">Blog </a></li>
+                        <li><a href="#">Support </a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-link flex-grow-1">
+                    <h5 class="font-cabin">EXTRAS</h5>
+                    <ul class="list-style-none p-0 mt-2">
+                        <li><a href="https://laracasts.com/gift-certificates">Gift Certificates </a></li>
+                        <li><a href="https://laracasts.com/teams">Teames </a></li>
+                        <li><a href="https://laracasts.com/faq">FAQ </a></li>
+                        <li><a href="https://assets.laracasts.com/">Assets </a></li>
+                        <li><a href="https://larajobs.com/?partner=36#">Get a Job </a></li>
+                        <li><a href="https://laracasts.com/privacy">Privacy </a></li>
+                        <li><a href="https://laracasts.com/terms">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center font-poppins">
+                <hr>
+                <div class="text-secondary mx-auto" style="line-break:auto;max-width:500px; ">© Laracasts 2022. All rights reserved. Yes, all of them. That means you, Todd.
+                    Proudly hosted with Laravel Forge and DigitalOcean .</div>
+            </div>
+        </div>
+    </section>
+
+
 </body>
 
 </html>
