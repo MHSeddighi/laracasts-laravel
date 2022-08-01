@@ -43,7 +43,27 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public  function userable(){
+    public function userable(){
         return $this->morphTo();
+    }
+
+    public function image(){
+        return $this->hasOne(Image::class);
+    }
+
+    public function links(){
+        return $this->hasMany(Link::class);
+    }
+
+    public function comments(){
+        return $this->morphMany(Comment::class);
+    }
+
+    public function watchlist(){
+        return $this->hasMany(Course::class);
+    }
+
+    public function questions(){
+        return $this->hasMany(Question::class);
     }
 }

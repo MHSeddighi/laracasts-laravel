@@ -69,9 +69,9 @@
 
 <div class="d-flex justify-content-center my-5 flex-wrap" style="gap:2.5%;">
     <div class="border-radius-3 card-skills">
-        <div class="border-radius-3 px-4 py-3 h-75 text-center" style="background-color:#F24777;">
-            <img src="images/frameworks-default.svg">
-            <div class="text-white">Frameworks</div>
+        <div class="border-radius-3 px-4 py-3 fs-5 h-75 text-center" style="background-color:#F24777;">
+            <img src="images/frameworks-default.svg"><br>
+            <span class="text-white">Framework</span>
         </div>
         <div class="text-center d-flex justify-content-center gap-3 py-2" style="color:gray;">
             <div class="text-center ">
@@ -96,11 +96,11 @@
     </div>
     <div class="border-radius-3 card-skills">
         <div class="border-radius-3 px-4 py-3 fs-5 h-75 text-center" style="background-color:#FDC037;">
-            <img src="images/languages-default.svg">
-            <div class="text-white">Languages</div>
+            <img src="images/languages-default.svg"><br>
+            <span class="text-white">Languages</span>
         </div>
         <div class="text-center d-flex justify-content-center gap-3 py-2" style="color:gray;">
-            <div class="text-center ">
+            <div class="text-center">
                 <span class="d-block">19</span>
                 <span class="font-size-10">Series</span>
             </div>
@@ -122,8 +122,8 @@
     </div>
     <div class="border-radius-3 card-skills">
         <div class="border-radius-3 px-4 py-3 fs-5 h-75 text-center" style="background-color:#4998FB;">
-            <img src="images/techniques-default.svg">
-            <div class="text-white">Techniques</div>
+            <img src="images/techniques-default.svg"><br>
+            <span class="text-white">Techniques</span>
         </div>
         <div class="text-center d-flex justify-content-center gap-3 py-2" style="color:gray;">
             <div class="text-center ">
@@ -148,8 +148,8 @@
     </div>
     <div class="border-radius-3 card-skills">
         <div class="border-radius-3 px-4 py-3 fs-5 h-75 text-center" style="background-color:#3EB59B;">
-            <img src="images/testing-default.svg">
-            <div class="text-white">Testing</div>
+            <img src="images/testing-default.svg"><br>
+            <span class="text-white">Testing</span>
         </div>
         <div class="text-center d-flex justify-content-center gap-3 py-2" style="color:gray;">
             <div class="text-center ">
@@ -173,9 +173,9 @@
         </button>
     </div>
     <div class="border-radius-3 card-skills">
-        <div class="border-radius-3 px-4 py-3 fs-5 h-75  text-center     " style="background-color:#9C67D8;">
-            <img src="images/tooling-default.svg">
-            <div class="text-white">Tooling</div>
+        <div class="border-radius-3 px-4 py-3 fs-5 h-75  text-center" style="background-color:#9C67D8;">
+            <img src="images/tooling-default.svg"><br>
+            <span class="text-white">Tooling</span>
         </div>
         <div class="text-center d-flex justify-content-center gap-3 py-2" style="color:gray;">
             <div class="text-center ">
@@ -208,7 +208,7 @@
 
 @include('course-cards')
 
-<div class="py-3 text-center" style="font-size:15px;font-weight: 500;">
+<div class="py-3 text-center px-2" style="font-size:15px;font-weight: 500;">
     <div style="font-size:30px;">Explore Laracasts</div>
     If you already know what you're looking for, Laracasts is divided into various topics ranging<br>
     from frameworks to packages to tools.

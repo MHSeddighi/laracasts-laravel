@@ -16,11 +16,13 @@ return new class extends Migration
         schema::create('courses',function(Blueprint $table){
            $table->id();
            $table->dateTime('length');
-           $table->integer('lessonNumbers');
            $table->string('title');
+           $table->integer('lessons');
            $table->string('description');
            $table->string('difficulty');
            $table->string('category');
+           $table->integer('views');
+           $table->integer('series');
         });
     }
 

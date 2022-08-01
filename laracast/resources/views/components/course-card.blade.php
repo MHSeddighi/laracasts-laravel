@@ -28,7 +28,7 @@
                 <span>Play</span>
             </button>
             <div class="font-gray font-size-10 p-2" >
-                <img src="images/course cards/books-icon.svg"/><span class="me-4 ms-1">  {{ $lessonNumbers }} lessons</span>
+                <img src="images/course cards/books-icon.svg"/><span class="me-4 ms-1">  {{ $lessons }} lessons</span>
                 <img src="images/course cards/clock-icon.svg"/><span class="ms-1">  {{ $time }}  </span>
             </div>
     </div>

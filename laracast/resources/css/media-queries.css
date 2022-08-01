@@ -4,4 +4,14 @@
         flex-direction: column;
         text-align: center;
     }
+    .footer-background{
+        display:none;
+    }
+}
+
+@media screen and (max-width:1160px){
+    .home-footer{
+        background-position: 10% 0 !important;
+        background-size: 120px;
+    }
 }

@@ -75,12 +75,14 @@
         @yield('content')
     </main>
     <section class="home-footer position-relative  overflow-hidden">
-        <img class="position-absolute" src="images/footer-gang.svg" style="top:0;bottom:0;right: -200px;z-inedx:-1;"/>
+        <img class="footer-background" src="images/footer-gang.svg"/>
         <div class="d-flex flex-column text-white gap-5 font-poppins pt-0">
-            <div class="footer-email gap-4">
-                <h2 class="text-center align-self-center mt-4" style="max-width:580px;">Want us to email you occasionally with Laracasts news?</h2>
-                <form class="align-self-center"  method="post">
-                    <input type="email" placeholder="Enter your email address" />
+            <div class="footer-email gap-4 mb-5">
+                <h2 class="text-center align-self-center mt-lg-5" style="max-width:580px;">Want us to email you occasionally with Laracasts news?</h2>
+                <form class="align-self-center position-relative" method="Post" action="">
+                    @csrf
+                    <input type="email" class="rounded-pill w-100 px-3 border-0" placeholder="Enter your email address" style="min-width:400px;height:45px;"/>
+                    <input type="submit" value="{{ __('SUBSCRIBE') }}" class="position-absolute py-2 px-3 h-100 btn btn-primary rounded-pill" style="right:0;"/>
                 </form>
             </div>
             <div class="d-flex text-white gap-1">
@@ -126,9 +128,9 @@
                     </ul>
                 </div>
             </div>
-            <div class="text-center font-poppins">
+            <div class="text-center font-poppins" style="color: #b0a7a7;">
                 <hr>
-                <div class="text-secondary mx-auto" style="line-break:auto;max-width:500px; ">© Laracasts 2022. All rights reserved. Yes, all of them. That means you, Todd.
+                <div class="mx-auto" style="line-break:auto;max-width:500px; ">© Laracasts 2022. All rights reserved. Yes, all of them. That means you, Todd.
                     Proudly hosted with Laravel Forge and DigitalOcean .</div>
             </div>
         </div>

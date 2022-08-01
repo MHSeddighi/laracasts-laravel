@@ -484,20 +484,30 @@ input::-webkit-search-cancel-button:hover {
 /* footer */
 
 .home-footer{
+    background-image: url("../../public/images/mic-drop@2x.webp");
+    background-position:20% 0;
+    background-repeat:no-repeat;
+    background-size:150px;
     background-color:#2F4870;
     padding: 0px 130px 20px 130px;
 }
 
 .footer-email{
-    background-image: url("../../public/images/mic-drop@2x.webp");
-    background-position:top left;
-    background-repeat:no-repeat;
-    background-size:120px;
     display:flex;
     flex-direction: column;
-    min-width:70%;
+    width:100%;
     margin:auto;
 }
+
+.footer-email form input[type="email"]:focus{
+    outline:none;
+    border:0;
+}
+
+.footer-email form input[type="submit"]:focus{
+    box-shadow: 2px 2px 10px #0a1520 ;
+}
+
 
 .footer-link a{
     text-decoration: none;
@@ -517,3 +527,10 @@ input::-webkit-search-cancel-button:hover {
     flex-grow:2;
 }
 
+.footer-background{
+    top:0;
+    bottom:0;
+    right: -200px;
+    z-inedx:-1;
+    position: absolute;
+}
