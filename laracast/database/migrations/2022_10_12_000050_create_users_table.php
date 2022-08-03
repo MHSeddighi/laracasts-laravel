@@ -24,6 +24,10 @@ return new class extends Migration
             $table->timestamps();
             $table->string('introduction')->nullable();
             $table->integer('score');
+            $table->morphs('userable');
+            $table->foreignId('image_id')->constrained()
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 

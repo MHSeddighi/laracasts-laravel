@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('content');
             $table->timestamps();
+            $table->morphs('commentable');
         });
     }
 

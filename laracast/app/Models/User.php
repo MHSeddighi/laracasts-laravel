@@ -52,18 +52,22 @@ class User extends Authenticatable
     }
 
     public function links(){
-        return $this->hasMany(Link::class);
+        return $this->morphMany(Link::class);
     }
 
     public function comments(){
         return $this->morphMany(Comment::class);
     }
 
-    public function watchlist(){
-        return $this->hasMany(Course::class);
+    public function courses_watchlist(){
+        return $this->belongsToMany(Course::class);
     }
 
     public function questions(){
         return $this->hasMany(Question::class);
+    }
+
+    public function courses_participant(){
+        return $this->belongsToMany(Course::class);
     }
 }

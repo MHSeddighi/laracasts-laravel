@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('source');
             $table->string('url');
+            $table->morphs('linkable');
             $table->timestamps();
         });
     }

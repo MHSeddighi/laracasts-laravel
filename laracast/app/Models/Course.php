@@ -21,7 +21,7 @@ class Course extends Model
     }
 
     public function links(){
-        return $this->hasMany(Link::class);
+        return $this->morphMany(Link::class);
     }
 
     public function comments(){
@@ -32,4 +32,15 @@ class Course extends Model
         return $this->hasOne(Image::class);
     }
 
+    public function users_watchlist(){
+        return $this->belongsToMany(User::class);
+    }
+
+    public function totur(){
+        return $this->hasOne(Totur::class);
+    }
+
+    public function users_participant(){
+        return $this->belongsToMany(User::class);
+    }
 }

@@ -13,4 +13,8 @@ class Tutor extends Model
         return $this->morphOne(User::class,'userable');
     }
 
+    public function courses(){
+        $this->belongsToMany(Course::class);
+    }
+
 }
