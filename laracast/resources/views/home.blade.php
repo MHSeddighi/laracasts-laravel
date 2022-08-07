@@ -206,7 +206,7 @@
     on your favorite web technologies and techniques.
 </div>
 
-@include('course-cards')
+@include('course.course-cards')
 
 <div class="py-3 text-center px-2" style="font-size:15px;font-weight: 500;">
     <div style="font-size:30px;">Explore Laracasts</div>
@@ -215,5 +215,7 @@
 </div>
 
 @include('topic-cards')
-
+<form class="" method="post" action="">
+    <input type="file" />
+</form>
 @endsection

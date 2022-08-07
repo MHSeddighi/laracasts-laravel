@@ -17,7 +17,7 @@
 
     @isset($title)
     <div class="m-3 mb-2 w-67 d-flex flex-column gap-1 border-radius-3 position-relative justify-content-between play-button {{ isset($content) ? "gap-4":"" }}">
-        <a class="font-cabin fs-5 underline-hover text-black text-decoration-none"> {{ $title }}</a>
+        <a href=" {{ route('course/$title') }} " class="font-cabin fs-5 underline-hover text-black text-decoration-none"> {{ $title }}</a>
         @isset($content)
         <p class="font-size-12 overflow-hidden max-h-100"> {{ $content }} </p>
         @endisset

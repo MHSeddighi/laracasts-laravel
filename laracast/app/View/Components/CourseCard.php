@@ -11,6 +11,7 @@ class CourseCard extends Component
      *
      * @return void
      */
+
     public $imageSource;
     public $imageBackground;
     public $title;
