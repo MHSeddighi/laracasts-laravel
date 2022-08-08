@@ -16,16 +16,12 @@ class Course extends Model
         'difficulty',
     ];
 
-    public function videos(){
-        return $this->hasMany(Video::class);
+    public function episodes(){
+        return $this->hasMany(Episode::class);
     }
 
     public function links(){
-        return $this->morphMany(Link::class);
-    }
-
-    public function comments(){
-        return $this->morphMany(Comment::class);
+        return $this->morphMany(Link::class,'linkable');
     }
 
     public function image(){

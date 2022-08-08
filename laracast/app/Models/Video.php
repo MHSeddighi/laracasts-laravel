@@ -9,7 +9,7 @@ class Video extends Model
 {
     use HasFactory;
 
-    public function course(){
-        return $this->belongsTo(Course::class);
+    public function episode(){
+        return $this->belongsTo(Episode::class);
     }
 }

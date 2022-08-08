@@ -1,11 +1,11 @@
 <div class="container-fluid row">
     <div class="col-md-4 d-flex flex-column justify-content-between">
         <div class="d-flex flex-row gap-4">
-            <x-coursecard width="50%" imageSource="https://laracasts.nyc3.cdn.digitaloceanspaces.com/series/thumbnails/svelte-crash-course.png" imageBackground="background:linear-gradient(180deg,#f44881,#ec454f);" />
-            <x-coursecard width="50%" imageSource="https://laracasts.nyc3.cdn.digitaloceanspaces.com/series/thumbnails/livewire-uncovered.png" imageBackground="background:linear-gradient(180deg,#f44881,#ec454f);" />
+            <x-coursecard width="50%" imageBackground="background:linear-gradient(180deg,#f44881,#ec454f);"  title="Svelte Crash Course"/>
+            <x-coursecard width="50%" imageBackground="background:linear-gradient(180deg,#f44881,#ec454f);"  title="Livewire Uncovered"/>
         </div>
-        <x-coursecard width="100%" imageSource="https://laracasts.nyc3.cdn.digitaloceanspaces.com/series/thumbnails/learn-laravel-forge.png" imageBackground="background:linear-gradient(0deg,#8b60ed,#b372bd);" title="Learn Laravel forge (2022 Edition)" lessons="24" time="1h 52m" />
-        <x-coursecard width="100%" imageSource="https://laracasts.nyc3.cdn.digitaloceanspaces.com/series/thumbnails/css-grids-simplified.png" imageBackground="background:linear-gradient(0deg,#f19a1a,#ffc73c);" type="LANGUAGES" time="1h 29m" lessons="12" difficulty="Intermediate" title="Css Grid Simplified" content="Grid is one of the most powerful tools in CSS, but also the most confusing one. Once you master creating layouts with CSS grids, you’ll wonder how you lived without it.In this course, we'll use real world examples and layouts to learn about the CSS properties related to grid. Hopefully, by the conclusion of this series, you'll have a much better understanding of the finer details." />
+        <x-coursecard width="100%" imageBackground="background:linear-gradient(0deg,#8b60ed,#b372bd);" title="Learn Laravel forge (2022 Edition)" lessons="24" time="1h 52m" />
+        <x-coursecard width="100%" imageBackground="background:linear-gradient(0deg,#f19a1a,#ffc73c);" type="LANGUAGES" time="1h 29m" lessons="12" difficulty="Intermediate" title="Css Grid Simplified" content="Grid is one of the most powerful tools in CSS, but also the most confusing one. Once you master creating layouts with CSS grids, you’ll wonder how you lived without it.In this course, we'll use real world examples and layouts to learn about the CSS properties related to grid. Hopefully, by the conclusion of this series, you'll have a much better understanding of the finer details." />
         <div class="d-flex flex-row gap-4">
             <x-coursecard width="50%" imageSource="https://laracasts.nyc3.cdn.digitaloceanspaces.com/series/thumbnails/learn-vue-3.png" imageBackground="background:linear-gradient(180deg,#f44881,#ec454f);" />
             <x-coursecard width="50%" imageSource="https://laracasts.nyc3.cdn.digitaloceanspaces.com/series/thumbnails/react-beyond-the-basics.png" imageBackground="background:linear-gradient(180deg,#f44881,#ec454f);" />

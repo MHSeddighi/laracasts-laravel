@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Models\Course;
 use Illuminate\View\Component;
 
 class CourseCard extends Component
@@ -11,41 +12,21 @@ class CourseCard extends Component
      *
      * @return void
      */
-
-    public $imageSource;
-    public $imageBackground;
-    public $title;
-    public $time;
-    public $lessons;
-    public $type;
-    public $difficulty;
-    public $content;
-    public $width;
-    public $height;
+    public String $title;
+    public String $width;
+    public String $height;
+    public String $imageBackground;
 
     /**
-     * @param $imageSource
-     * @param $imageBackground
-     * @param $title
-     * @param $time
-     * @param $lessons
-     * @param $type
-     * @param $difficulty
-     * @param $content
+     * @param String|null $title
      * @param $width
+     * @param $height
      */
-    public function __construct($imageSource=null, $imageBackground=null, $title=null, $time=null, $lessons=null, $type=null, $difficulty=null, $content=null, $width=null,$height=null)
+    public function __construct(String $title=null, $width=null, $height=null,$imageBackground=null)
     {
-        $this->imageSource = $imageSource;
-        $this->imageBackground = $imageBackground;
-        $this->title = $title;
-        $this->time = $time;
-        $this->lessons = $lessons;
-        $this->type = $type;
-        $this->difficulty = $difficulty;
-        $this->content = $content;
+        $this->title= $title;
         $this->width = $width;
-        $this->height=$height;
+        $this->height = $height;
     }
 
 
@@ -56,6 +37,7 @@ class CourseCard extends Component
      */
     public function render()
     {
-        return view('components.course-card');
+        $course=Course::where('title',slugify($this->title))->first();
+        return view('components.course-card')->with('course',$course);
     }
 }

@@ -52,11 +52,11 @@ class User extends Authenticatable
     }
 
     public function links(){
-        return $this->morphMany(Link::class);
+        return $this->morphMany(Link::class,'linkable');
     }
 
     public function comments(){
-        return $this->morphMany(Comment::class);
+        return $this->morphMany(Comment::class,'commentable');
     }
 
     public function courses_watchlist(){

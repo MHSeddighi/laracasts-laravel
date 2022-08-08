@@ -15,13 +15,20 @@ return new class extends Migration
     {
         schema::create('courses',function(Blueprint $table){
            $table->id();
-           $table->dateTime('length');
+           $table->dateTime('period-of-time');
            $table->string('title')->unique();
-           $table->integer('lessons');
-           $table->string('description')->nullable();
+           $table->string('description');
            $table->string('difficulty');
            $table->string('category');
            $table->integer('views')->default(0);
+           $table->unsignedBigInteger('image_id');
+           $table->foreign('image_id')->references('id')->on('images')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+
+           $table->foreignId('tutor_id')->constrained()
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 
