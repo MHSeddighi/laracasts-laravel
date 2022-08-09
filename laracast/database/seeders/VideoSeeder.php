@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Video;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Storage;
 
 class VideoSeeder extends Seeder
 {
@@ -14,6 +15,13 @@ class VideoSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $json=Storage::disk('local')->get('/json/videos.json');
+        $videos=json_decode($json,true);
+        foreach($videos as $video){
+            Video::create([
+                "id"=>$video['id'],
+                "src" => $video['src']
+            ]);
+        }
     }
 }

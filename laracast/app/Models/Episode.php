@@ -20,4 +20,8 @@ class Episode extends Model
     public function comments(){
         return $this->morphMany(Comment::class,'commentable');
     }
+
+    public function section(){
+        return $this->hasOne(Section::class);
+    }
 }

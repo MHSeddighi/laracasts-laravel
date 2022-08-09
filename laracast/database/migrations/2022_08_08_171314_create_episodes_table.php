@@ -20,13 +20,10 @@ return new class extends Migration
             $table->integer('number');
             $table->string('title');
             $table->string('description');
-            $table->unsignedBigInteger('link_id')->nullable();
-            $table->foreign('link_id')
-                ->references('id')
-                ->on('links')
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
-            $table->foreignId('course_id')->constrained()
+            $table->boolean('is-public');
+            $table->unsignedBigInteger('section_id')->nullable();
+            $table->foreign('section_id')->references('id')
+                    ->on('sections')
                     ->onUpdate('cascade')
                     ->onDelete('cascade');
             $table->foreignId('video_id')->constrained()

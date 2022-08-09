@@ -16,8 +16,8 @@ class Course extends Model
         'difficulty',
     ];
 
-    public function episodes(){
-        return $this->hasMany(Episode::class);
+    public function sections(){
+        return $this->hasMany(Section::class);
     }
 
     public function links(){
