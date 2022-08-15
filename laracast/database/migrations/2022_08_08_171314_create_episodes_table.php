@@ -18,7 +18,6 @@ return new class extends Migration
             $table->timestamps();
             $table->string('title');
             $table->integer('number');
-            $table->string('title');
             $table->string('description');
             $table->boolean('is-public');
             $table->unsignedBigInteger('section_id')->nullable();

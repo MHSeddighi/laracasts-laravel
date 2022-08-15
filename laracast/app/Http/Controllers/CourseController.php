@@ -8,8 +8,11 @@ use Illuminate\Http\Request;
 class CourseController extends Controller
 {
     public function index($courseTitle){
-        $course=Course::where('title',slugify($courseTitle))->first();
-        return view('course')->with($course);
+        $course=Course::where('title',$courseTitle)->first();
+        return view('course.course')->with([
+            'course'=>$course,
+            'tutor'=>$course->tutor->user,
+            'tutor_image'=>$course->tutor->user->image->src]);
     }
 
     public function create(){

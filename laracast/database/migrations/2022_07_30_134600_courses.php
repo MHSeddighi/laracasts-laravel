@@ -13,11 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        schema::create('courses',function(Blueprint $table){
+        Schema::create('courses',function(Blueprint $table){
            $table->id();
+           $table->timestamps();
            $table->dateTime('period-of-time');
            $table->string('title')->unique();
-           $table->string('description');
+           $table->text('description');
            $table->string('difficulty');
            $table->string('category');
            $table->integer('views')->default(0);

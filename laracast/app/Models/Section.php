@@ -9,6 +9,8 @@ class Section extends Model
 {
     use HasFactory;
 
+    public $timestamps=false;
+
     public function episodes(){
         return $this->hasMany(Episode::class);
     }

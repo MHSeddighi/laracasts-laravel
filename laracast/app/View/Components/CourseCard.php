@@ -14,19 +14,21 @@ class CourseCard extends Component
      */
     public String $title;
     public String $width;
-    public String $height;
-    public String $imageBackground;
+    public String $background;
+    public String $cardType;
 
     /**
      * @param String|null $title
      * @param $width
-     * @param $height
+     * @param $cardType
      */
-    public function __construct(String $title=null, $width=null, $height=null,$imageBackground=null)
+    public function __construct(String $title="", $width=null, $background=null,
+                                String $cardType="small")
     {
         $this->title= $title;
         $this->width = $width;
-        $this->height = $height;
+        $this->cardType=$cardType;
+        $this->background=$background;
     }
 
 
@@ -37,7 +39,8 @@ class CourseCard extends Component
      */
     public function render()
     {
-        $course=Course::where('title',slugify($this->title))->first();
+        $course=Course::where('title',slugify($this->title,"-"))->first();
+
         return view('components.course-card')->with('course',$course);
     }
 }

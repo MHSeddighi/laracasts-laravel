@@ -25,15 +25,15 @@ class Course extends Model
     }
 
     public function image(){
-        return $this->hasOne(Image::class);
+        return $this->belongsTo(Image::class);
     }
 
     public function users_watchlist(){
         return $this->belongsToMany(User::class);
     }
 
-    public function totur(){
-        return $this->hasOne(Totur::class);
+    public function tutor(){
+        return $this->belongsTo(Tutor::class);
     }
 
     public function users_participant(){

@@ -9,12 +9,15 @@ class Tutor extends Model
 {
     use HasFactory;
 
+    public $timestamps=false;
+
     public function user(){
         return $this->morphOne(User::class,'userable');
     }
 
     public function courses(){
-        $this->belongsToMany(Course::class);
+        return $this->hasMany(Course::class);
     }
+
 
 }

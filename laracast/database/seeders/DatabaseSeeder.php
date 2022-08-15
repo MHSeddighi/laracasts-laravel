@@ -5,6 +5,8 @@ namespace Database\Seeders;
 use App\Models\Description;
 use App\Models\Developer;
 use App\Models\Link;
+use App\Models\Section;
+use App\Models\Video;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -21,10 +23,11 @@ class DatabaseSeeder extends Seeder
             ImageSeeder::class,
             UserSeeder::class,
             TutorSeeder::class,
-            Developer::class,
-            Course::class,
-            Description::class,
-            Link::class,
+            DeveloperSeeder::class,
+            CourseSeeder::class,
+            VideoSeeder::class,
+            SectionSeeder::class,
+            LinkSeeder::class
         ]);
     }
 }

@@ -18,9 +18,18 @@ class UserSeeder extends Seeder
     {
         $json=Storage::disk('local')->get('/json/users.json');
         $users=json_decode($json);
-        foreach($users as $user){
-            User::create([
-                "src" => $user->,
+        foreach($users as $k=>$user){
+            User::query()->updateOrCreate([
+                "id" => $user->id,
+                "name"=>$user->name,
+                "username"=>$user->username,
+                "email"=>$user->email,
+                "password"=>$user->password,
+                "introduction"=>$user->introduction,
+                "score"=>$user->score,
+                "userable_type"=>$user->userable_type,
+                "userable_id"=>$user->userable_id,
+                "image_id"=>$user->image_id
             ]);
         }
     }

@@ -16,11 +16,11 @@ class VideoSeeder extends Seeder
     public function run()
     {
         $json=Storage::disk('local')->get('/json/videos.json');
-        $videos=json_decode($json,true);
-        foreach($videos as $video){
-            Video::create([
-                "id"=>$video['id'],
-                "src" => $video['src']
+        $videos=json_decode($json);
+        foreach($videos as $k=>$video){
+            Video::query()->updateOrCreate([
+                "id"=>$video->id,
+                "src" => $video->src
             ]);
         }
     }

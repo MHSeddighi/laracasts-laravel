@@ -11,7 +11,7 @@
     <title>{{ config('app.name', 'Laracasts') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script defer src="{{ asset('js/app.js') }}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -28,7 +28,7 @@
 <body>
     <nav class="navbar justify-content-center navbar-background m-0">
         <a class="navbar-brand" href="#">
-            <img width="22px" height="22px" src="images/lary-switch-to-subscription-icon.svg" />
+            <img  id="image" width="22px" height="22px" src="{{ asset('images/lary-switch-to-subscription-icon.svg')}}" />
         </a>
         <ul class="navbar-nav">
             <li class="navbar-item">
@@ -39,43 +39,43 @@
             </li>
         </ul>
     </nav>
-    <nav class="navbar px-2 mt-0  bg-blue justify-content-end">
-        <div class="container-fluid">
-            <a class="navbar-brand me-auto" href="#">
-                <img class="" src="images/logo-white.svg " width="145" height="17" />
-            </a>
+    <nav class="navbar mt-0 justify-content-between px-3 bg-blue">
+        <a class="navbar-brand" href="#">
+            <img class="" src="{{ asset("images/logo-white.svg") }} " width="145" height="17" />
+        </a>
+
+        @yield('header-navbar')
+
+        <div class="d-flex gap-1">
             <button class=" btn-search border-radius-3" type="button" data-bs-toggle="modal" data-bs-target="#searchId">
                 <svg fill="#fff" width="16px" height="16px" viewBox="0 0 15 15">
-                    <use xlink:href="images/icons.svg#icon-search"></use>
+                    <use xlink:href="{{asset("images/icons.svg#icon-search")}}"></use>
                 </svg>
             </button>
-            @auth
-            <a class="p-1 ms-1" href="#" data-bs-toggle="modal" data-bs-target="#profile">
-                <img class="border-radius-2" src="images/default-avatar.png " width="40" height="40" />
-            </a>
-            <div class="modal" id="profile">@include('layouts.profile')</div>
-            @endauth
 
             @guest
-            <button class="btn mx-2 btn-outline-primary" data-bs-toggle="modal" data-bs-target="#login-form">
-                {{__('SIGN IN')}}
-            </button>
-            <button class="btn mx-2 btn-outline-primary" data-bs-toggle="modal" data-bs-target="#register-form">
-                {{__('SIGN UP')}}
-            </button>
-
-            <div class="modal" id="login-form">@include('auth.login')</div>
-            <div class="modal" id="register-form">@include('auth.register')</div>
-
+                <button class="btn mx-2 btn-outline-primary" data-bs-toggle="modal" data-bs-target="#login-form">
+                    {{__('SIGN IN')}}
+                </button>
+                <button class="btn mx-2 btn-outline-primary" data-bs-toggle="modal" data-bs-target="#register-form">
+                    {{__('SIGN UP')}}
+                </button>
+                <div class="modal" id="login-form">@include('auth.login')</div>
+                <div class="modal" id="register-form">@include('auth.register')</div>
             @endguest
-
-            @yield('header-navbar')
+        </div>
+        @auth
+            <a class="p-1 ms-1" href="#" data-bs-toggle="modal" data-bs-target="#profile">
+                <img class="border-radius-2" src="{{ asset("images/default-avatar.png ") }}" width="40" height="40" />
+            </a>
+            <div class="modal" id="profile">@include('layouts.profile')</div>
+        @endauth
     </nav>
     <main>
         @yield('content')
     </main>
     <section class="home-footer position-relative  overflow-hidden">
-        <img class="footer-background" src="images/footer-gang.svg"/>
+        <img class="footer-background" src="{{ asset("images/footer-gang.svg") }}"/>
         <div class="d-flex flex-column text-white gap-5 font-poppins pt-0">
             <div class="footer-email gap-4 mb-5">
                 <h2 class="text-center align-self-center mt-lg-5" style="max-width:580px;">Want us to email you occasionally with Laracasts news?</h2>
@@ -87,7 +87,7 @@
             </div>
             <div class="d-flex text-white gap-1">
                 <div class="flex-grow-2">
-                    <img src="images/logo-white.svg " width="180" height="25">
+                    <img src="{{ asset("images/logo-white.svg") }} " width="180" height="25">
                     <p class="mt-4" style="max-width: 400px">
                         Nine out of ten doctors recommend Laracasts over competing brands. Come inside, see for yourself, and massively level up your development skills in the process.
                     </p>
@@ -140,3 +140,4 @@
 </body>
 
 </html>
+
