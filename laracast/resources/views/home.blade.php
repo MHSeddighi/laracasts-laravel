@@ -191,7 +191,7 @@
         </div>
         <button class="btn rounded-pill d-none">
             <svg class="align-middle" width="15px" height="15px" fill="#000">
-                <use xlink:href="images/play-button.svg#Capa_1"></use>
+                <use xlink:href="{{asset('images/play-button.svg#Capa_1')}}"></use>
             </svg>
             <span>
                 Explore

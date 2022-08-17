@@ -27,7 +27,8 @@ class DatabaseSeeder extends Seeder
             CourseSeeder::class,
             VideoSeeder::class,
             SectionSeeder::class,
-            LinkSeeder::class
+            LinkSeeder::class,
+            EpisodeSeeder::class
         ]);
     }
 }

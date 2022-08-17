@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->integer('number');
-
             $table->foreignId('course_id')->constrained()
                     ->onDelete('cascade')
                     ->onUpdate('cascade');

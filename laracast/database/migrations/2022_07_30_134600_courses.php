@@ -18,6 +18,7 @@ return new class extends Migration
            $table->timestamps();
            $table->dateTime('period-of-time');
            $table->string('title')->unique();
+           $table->string('slug');
            $table->text('description');
            $table->string('difficulty');
            $table->string('category');

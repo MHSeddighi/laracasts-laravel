@@ -12,6 +12,6 @@ class Section extends Model
     public $timestamps=false;
 
     public function episodes(){
-        return $this->hasMany(Episode::class);
+        return $this->hasMany(Episode::class)->orderBy('number');
     }
 }

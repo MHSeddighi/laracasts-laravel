@@ -16,10 +16,6 @@ class Course extends Model
         'difficulty',
     ];
 
-    public function sections(){
-        return $this->hasMany(Section::class);
-    }
-
     public function links(){
         return $this->morphMany(Link::class,'linkable');
     }
@@ -38,5 +34,13 @@ class Course extends Model
 
     public function users_participant(){
         return $this->belongsToMany(User::class);
+    }
+
+    public function sections(){
+        return $this->hasMany(Section::class,'course_id','id')->orderBy('number');
+    }
+
+    public function episodes(){
+        return $this->hasMany(Episode::class)->orderBy('number');
     }
 }

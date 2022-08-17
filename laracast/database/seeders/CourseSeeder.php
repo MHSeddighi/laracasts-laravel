@@ -22,6 +22,7 @@ class CourseSeeder extends Seeder
             Course::query()->updateOrCreate([
                 "id"=> $course['id'],
                 "title"=>$course['title'],
+                "slug"=>slugify($course['title'],'-'),
                 "period-of-time"=>$course['period-of-time'] ,
                 "description" =>$course['description'],
                 "difficulty"=>$course['difficulty'],

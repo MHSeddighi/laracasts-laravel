@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 
 class CourseController extends Controller
 {
-    public function index($courseTitle){
-        $course=Course::where('title',$courseTitle)->first();
+    public function index($slug){
+        $course=Course::where('slug',$slug)->first();
         return view('course.course')->with([
             'course'=>$course,
             'tutor'=>$course->tutor->user,

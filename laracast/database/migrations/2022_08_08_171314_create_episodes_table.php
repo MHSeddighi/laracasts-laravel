@@ -18,13 +18,16 @@ return new class extends Migration
             $table->timestamps();
             $table->string('title');
             $table->integer('number');
-            $table->string('description');
-            $table->boolean('is-public');
+            $table->text('description');
+            $table->boolean('is_public');
             $table->unsignedBigInteger('section_id')->nullable();
             $table->foreign('section_id')->references('id')
                     ->on('sections')
                     ->onUpdate('cascade')
                     ->onDelete('cascade');
+            $table->foreignId('course_id')->constrained()
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->foreignId('video_id')->constrained()
                 ->onUpdate('cascade')
                 ->onDelete('cascade');

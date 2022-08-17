@@ -19,7 +19,7 @@
 
     @if($cardType != "small")
     <div class="m-3 mb-2 w-67 d-flex flex-column gap-1 border-radius-3 position-relative justify-content-between play-button {{ isset($course->description) ? "gap-4":"" }}">
-        <a href="/series/{{ $course->title }}" class="font-cabin fs-5 underline-hover text-black text-decoration-none"> {{ $title }}</a>
+        <a href="/series/{{$course->slug }}" class="font-cabin fs-5 underline-hover text-black text-decoration-none"> {{ $title }}</a>
         @if($cardType === "big")
             <p class="font-size-12 overflow-hidden max-h-100"> {{ $course->description }} </p>
         @endif
@@ -30,8 +30,8 @@
             <span>Play</span>
         </button>
         <div class="font-gray font-size-10 p-2" >
-            <img src="images/course cards/books-icon.svg"/><span class="me-4 ms-1">  {{ $course->lessons }} lessons</span>
-            <img src="images/course cards/clock-icon.svg"/><time class="ms-1">  {{ $course->length }}  </time>
+            <img src="{{asset("images/course cards/books-icon.svg")}}"/><span class="me-4 ms-1">  {{ $course->lessons }} lessons</span>
+            <img src="{{asset("images/course cards/clock-icon.svg")}}"/><time class="ms-1">  {{ $course->length }}  </time>
         </div>
     </div>
     @endif
