@@ -10,7 +10,7 @@ class Episode extends Model
     use HasFactory;
 
     public function video(){
-        return $this->hasOne(Video::class);
+        return $this->belongsTo(Video::class);
     }
 
     public function link(){

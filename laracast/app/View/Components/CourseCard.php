@@ -39,7 +39,7 @@ class CourseCard extends Component
      */
     public function render()
     {
-        $course=Course::where('title',slugify($this->title,"-"))->first();
+        $course=Course::where('slug',slugify($this->title,"-"))->first();
 
         return view('components.course-card')->with('course',$course);
     }

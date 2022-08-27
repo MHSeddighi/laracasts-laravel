@@ -43,31 +43,43 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function userable(){
+    public function userable()
+    {
         return $this->morphTo();
     }
 
-    public function image(){
+    public function image()
+    {
         return $this->belongsTo(Image::class);
     }
 
-    public function links(){
-        return $this->morphMany(Link::class,'linkable');
+    public function links()
+    {
+        return $this->morphMany(Link::class, 'linkable');
     }
 
-    public function comments(){
-        return $this->morphMany(Comment::class,'commentable');
+    public function comments()
+    {
+        return $this->morphMany(Comment::class, 'commentable');
     }
 
-    public function courses_watchlist(){
+    public function courses_watchlist()
+    {
         return $this->belongsToMany(Course::class);
     }
 
-    public function questions(){
+    public function questions()
+    {
         return $this->hasMany(Question::class);
     }
 
-    public function courses_participant(){
+    public function courses_participant()
+    {
+        return $this->belongsToMany(Course::class);
+    }
+
+    public function watch()
+    {
         return $this->belongsToMany(Course::class);
     }
 }

@@ -13,11 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('videos', function (Blueprint $table) {
+        Schema::create('watches', function (Blueprint $table) {
             $table->id();
-            $table->string('src');
-
             $table->timestamps();
+            $table->foreignId('user_id')->constrained()
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+
+            $table->foreignId('course_id')->constrained()
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->integer('complete-percent');
         });
     }
 
@@ -28,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('videos');
+        Schema::dropIfExists('watches');
     }
 };

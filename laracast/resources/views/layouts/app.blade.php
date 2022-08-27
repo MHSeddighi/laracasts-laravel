@@ -28,7 +28,7 @@
 <body>
     <nav class="navbar justify-content-center navbar-background m-0">
         <a class="navbar-brand" href="#">
-            <img  id="image" width="22px" height="22px" src="{{ asset('images/lary-switch-to-subscription-icon.svg')}}" />
+            <img id="image" width="22px" height="22px" src="{{ asset('images/lary-switch-to-subscription-icon.svg')}}" />
         </a>
         <ul class="navbar-nav">
             <li class="navbar-item">
@@ -54,35 +54,35 @@
             </button>
 
             @guest
-                <button class="btn mx-2 btn-outline-primary" data-bs-toggle="modal" data-bs-target="#login-form">
-                    {{__('SIGN IN')}}
-                </button>
-                <button class="btn mx-2 btn-outline-primary" data-bs-toggle="modal" data-bs-target="#register-form">
-                    {{__('SIGN UP')}}
-                </button>
-                <div class="modal" id="login-form">@include('auth.login')</div>
-                <div class="modal" id="register-form">@include('auth.register')</div>
+            <button class="btn mx-2 btn-outline-primary" data-bs-toggle="modal" data-bs-target="#login-form">
+                {{__('SIGN IN')}}
+            </button>
+            <button class="btn mx-2 btn-outline-primary" data-bs-toggle="modal" data-bs-target="#register-form">
+                {{__('SIGN UP')}}
+            </button>
+            <div class="modal" id="login-form">@include('auth.login')</div>
+            <div class="modal" id="register-form">@include('auth.register')</div>
             @endguest
         </div>
         @auth
-            <a class="p-1 ms-1" href="#" data-bs-toggle="modal" data-bs-target="#profile">
-                <img class="border-radius-2" src="{{ asset("images/default-avatar.png ") }}" width="40" height="40" />
-            </a>
-            <div class="modal" id="profile">@include('layouts.profile')</div>
+        <a class="p-1 ms-1" href="#" data-bs-toggle="modal" data-bs-target="#profile">
+            <img class="border-radius-2" src="{{ asset("images/default-avatar.png ") }}" width="40" height="40" />
+        </a>
+        <div class="modal" id="profile">@include('layouts.profile')</div>
         @endauth
     </nav>
     <main>
         @yield('content')
     </main>
-    <section class="home-footer position-relative  overflow-hidden">
-        <img class="footer-background" src="{{ asset("images/footer-gang.svg") }}"/>
-        <div class="d-flex flex-column text-white gap-5 font-poppins pt-0">
+    <section class="home-footer position-relative overflow-hidden">
+        <img class="footer-background" src="{{ asset("images/footer-gang.svg") }}" />
+        <div class="d-flex flex-column text-white gap-5 font-poppins pt-0 z-index-100">
             <div class="footer-email gap-4 mb-5">
                 <h2 class="text-center align-self-center mt-lg-5" style="max-width:580px;">Want us to email you occasionally with Laracasts news?</h2>
                 <form class="align-self-center position-relative" method="Post" action="">
                     @csrf
-                    <input type="email" class="rounded-pill w-100 px-3 border-0" placeholder="Enter your email address" style="min-width:400px;height:45px;"/>
-                    <input type="submit" value="{{ __('SUBSCRIBE') }}" class="position-absolute py-2 px-3 h-100 btn btn-primary rounded-pill" style="right:0;"/>
+                    <input type="email" class="rounded-pill w-100 px-3 border-0" placeholder="Enter your email address" style="min-width:400px;height:45px;" />
+                    <input type="submit" value="{{ __('SUBSCRIBE') }}" class="position-absolute py-2 px-3 h-100 btn btn-primary rounded-pill" style="right:0;" />
                 </form>
             </div>
             <div class="d-flex text-white gap-1">
@@ -94,7 +94,7 @@
                 </div>
                 <div class="footer-link flex-grow-1">
                     <h5 class="font-cabin">LEARN</h5>
-                    <ul class="list-style-none p-0 mt-2">
+                    <ul class="list-style-none p-0 mt-2 cursor-pointer">
                         <li><a href="https://laracasts.com/series">Series </a></li>
                         <li><a href="https://laracasts.com/bits">Larabits </a></li>
                         <li><a href="https://laracasts.com/browse">Topics </a></li>
@@ -107,7 +107,7 @@
 
                 <div class="footer-link flex-grow-1">
                     <h5 class="font-cabin">DISCUSS</h5>
-                    <ul class="list-style-none p-0 mt-2">
+                    <ul class="list-style-none p-0 mt-2 cursor-pointer">
                         <li><a href="https://laracasts.com/discuss">Forum </a></li>
                         <li><a href="https://laracasts.com/podcast">Podcast </a></li>
                         <li><a href="https://laracasts.com/blog">Blog </a></li>
@@ -117,7 +117,7 @@
 
                 <div class="footer-link flex-grow-1">
                     <h5 class="font-cabin">EXTRAS</h5>
-                    <ul class="list-style-none p-0 mt-2">
+                    <ul class="list-style-none p-0 mt-2 cursor-pointer">
                         <li><a href="https://laracasts.com/gift-certificates">Gift Certificates </a></li>
                         <li><a href="https://laracasts.com/teams">Teames </a></li>
                         <li><a href="https://laracasts.com/faq">FAQ </a></li>
@@ -140,4 +140,3 @@
 </body>
 
 </html>
-
