@@ -60,14 +60,14 @@
                 </svg>
                 Add to Watchlist
             </a>
-            <div class="course-detail d-flex justify-content-between gap-4 vertical-align-middle px-4">
+            <div class="course-detail d-flex justify-content-between gap-4 vertical-align-middle px-4 font-poppins">
                 <x-img-text imgSrc="{{asset('images/course cards/books-icon.svg')}}#books" imgColor="#fff" text="{{ $course->episodes->count() }} episodes" textColor="#fff"></x-img-text>
-                <div class="delimeter-line"></div>
+                <div class="delimeter-line bg-lightgray "></div>
                 <x-img-text imgSrc="{{asset('images/course cards/clock-icon.svg')}}#clock" imgColor="#fff" text="12h " textColor="#fff"></x-img-text>
-                <div class="delimeter-line"></div>
+                <div class="delimeter-line bg-lightgray "></div>
                 <x-difficulty-icon level="{{ $course->difficulty }}" direction="vertical"></x-difficulty-icon>
                 <span>{{ $course->difficulty}}</span>
-                <div class="delimeter-line"></div>
+                <div class="delimeter-line bg-lightgray "></div>
                 <a href="{{ $course->links->where('source','facebook')->first()->url }}" class="d-flex align-items-center ms-auto ">
                     <svg width="21px" height="21px" class="text-blue" color="#fff">
                         <use xlink:href="{{ asset('images/icons/facebook.svg#facebook') }}"></use>
@@ -84,10 +84,11 @@
         <div class=" d-flex flex-column font-poppins">
             @foreach ($course->episodes as $episode)
             <div class="d-flex justify-content-start border-radius-3 p-4 my-2 bg-blue-c gap-5">
-                <div class="d-flex circle border-blue p-2 align-self-center justify-content-center position-relative">
-                    <div class="transform-vertical-center">{{ $episode->number}}</div>
-                    <div class="d-none">
-                        <svg>
+                <div class="d-flex circle border-blue outline-blue p-3 align-self-center justify-content-center position-relative success-hover" style="background:#193152;">
+                    <div class="transform-vertical-center">{{ sprintf("%02d",$episode->number) }}</div>
+                    <div class="opacity-0">
+                        <svg fill="#fff" width="20px" height="20px">
+                            <use xlink:href="{{ asset('images/success.svg') }}#success"></use>
                         </svg>
                     </div>
                     <!-- <div></div>  not uploaded yet-->

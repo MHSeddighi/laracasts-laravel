@@ -12393,3 +12393,20 @@ a.active {
     align-self: center;
 }
 
+.outline-blue {
+    outline: 2px solid #193152;
+}
+
+.success-hover:hover div[class="opacity-0"] {
+    opacity: 1 !important;
+    transition: opacity 0.2s ease-out;
+}
+
+.success-hover:hover div:not([class="opacity-0"]) {
+    opacity: 0 !important;
+}
+
+.bg-lightgray {
+    background-color: lightgray;
+}
+

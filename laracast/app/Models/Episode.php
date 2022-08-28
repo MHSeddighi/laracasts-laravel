@@ -9,19 +9,28 @@ class Episode extends Model
 {
     use HasFactory;
 
-    public function video(){
+    public function video()
+    {
         return $this->belongsTo(Video::class);
     }
 
-    public function link(){
-        return $this->morphOne(Link::class,'linkalbe');
+    public function link()
+    {
+        return $this->morphOne(Link::class, 'linkalbe');
     }
 
-    public function comments(){
-        return $this->morphMany(Comment::class,'commentable');
+    public function comments()
+    {
+        return $this->morphMany(Comment::class, 'commentable');
     }
 
-    public function section(){
+    public function section()
+    {
         return $this->hasOne(Section::class);
+    }
+
+    public function course()
+    {
+        return $this->belongsTo(Course::class);
     }
 }
