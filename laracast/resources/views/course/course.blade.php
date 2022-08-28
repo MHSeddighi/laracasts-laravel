@@ -96,10 +96,12 @@
                 <section class="max-width" style="max-width:85%">
                     <h4>{{ $episode->title }}</h4>
                     <p class="mt-3 position-relative font-size-12 clamp">{{ $episode->description }}</p>
-                    <span class="ms-4 text-gray-900 font-size-10">EPISODE {{ $episode->number}}</span>
-                    <span class="ms-4 text-gray-900 font-size-10">
-                        <img src="{{asset("images/course cards/clock-icon.svg")}}" class="m-1 ">
-                        {{ $episode->video->getDuration() }} minutes
+                    <span class="ms-3 text-gray-900 font-size-10">EPISODE {{ $episode->number}}</span>
+                    <span class="ms-3 text-gray-900 font-size-10 position-relative">
+                        <svg width="12" height="12" fill="#BAC6CC" class="transform-vertical-center">
+                            <use xlink:href="{{asset("images/course cards/clock-icon.svg")}}#clock"></use>
+                        </svg>
+                        <spanc class="ms-3">{{ convertSecondsToClockTime($episode->video->duration) }} minutes</span>
                     </span>
                 </section>
             </div>

@@ -13,6 +13,7 @@
         "laravel/telescope": "^4.9",
         "laravel/tinker": "^2.7",
         "laravel/ui": "^3.4",
+        "owen-oj/laravel-getid3": "^2.1",
         "pbmedia/laravel-ffmpeg": "^8.1",
         "spatie/flysystem-dropbox": "^2.0",
         "spatie/laravel-google-cloud-storage": "^2.0"
