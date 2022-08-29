@@ -1,4 +1,4 @@
-<div class="d-flex justify-content-center gap-1">
+<div class="d-flex justify-content-center gap-1 mq-860-d-none">
     @if($direction=="horizontal")
         <span class="d-inline-block w-2 h-1 rounded bg-white"></span>
         <span class="d-inline-block w-2 h-1 rounded {{ strcasecmp($level,"beginner")!=0 ? "bg-white":"bg-secondary opacity-50" }}"></span>

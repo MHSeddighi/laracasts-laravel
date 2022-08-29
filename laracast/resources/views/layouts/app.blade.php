@@ -78,7 +78,7 @@
         <img class="footer-background" src="{{ asset("images/footer-gang.svg") }}" />
         <div class="d-flex flex-column text-white gap-5 font-poppins pt-0 z-index-100">
             <div class="footer-email gap-4 mb-5">
-                <h2 class="text-center align-self-center mt-lg-5" style="max-width:580px;">Want us to email you occasionally with Laracasts news?</h2>
+                <h2 class="text-center align-self-center mt-5" style="max-width:580px;">Want us to email you occasionally with Laracasts news?</h2>
                 <form class="align-self-center position-relative" method="Post" action="">
                     @csrf
                     <input type="email" class="rounded-pill w-100 px-3 border-0" placeholder="Enter your email address" style="min-width:400px;height:45px;" />

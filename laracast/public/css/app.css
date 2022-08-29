@@ -11588,24 +11588,84 @@ textarea.form-control-lg {
     font-family: poppins;
 }
 
-@media screen and (max-width:750px){
-
-    .home-footer div{
-        flex-direction: column;
-        text-align: center;
-    }
-    .footer-background{
-        display:none;
-    }
-}
-
-@media screen and (max-width:1160px){
-    .home-footer{
+@media screen and (max-width:1160px) {
+    .home-footer {
         background-position: 10% 0 !important;
         background-size: 120px;
     }
 }
 
+
+@media screen and (max-width:1200px) {
+    .course-wrap aside {
+        order: 1;
+        position: relative;
+    }
+
+    .course-wrap div {
+        order: 0;
+    }
+
+    .course-wrap {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .home-footer div {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .footer-background {
+        display: none;
+    }
+
+    nav.navbar-links a {
+        display: none;
+    }
+
+    img.tutor-background {
+        top: 40%;
+        left: 5%;
+        opacity: 0.5;
+        transform: scale(2, 2);
+    }
+}
+
+@media screen and (max-width:860px) {
+    img.tutor-background {
+        display: none;
+    }
+
+    div.course-mediaquery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    p.course-description {
+        text-align: center;
+    }
+
+    .course-wrap {
+        padding: 10px 0 10px 0 !important;
+    }
+
+    .course-info {
+        order: 1;
+        text-align: center;
+    }
+
+    img.course-img {
+        order: 0;
+        margin-bottom: 20px;
+    }
+
+    *.mq-860-d-none {
+        display: none !important;
+    }
+
+}
 @-webkit-keyframes popup {
     from {
         display: none;
@@ -12231,10 +12291,10 @@ a.active {
 
 .tutor-background {
     position: absolute;
-    top: 35%;
-    left: 20%;
+    top: 50%;
+    left: 30%;
     opacity: 0.4;
-    transform: scale(2.3);
+    transform: scale(2, 3);
     filter: grayscale(0.9);
     -webkit-mask-image: radial-gradient(farthest-side at 50% 48%, black 55%, transparent 95%);
             mask-image: radial-gradient(farthest-side at 50% 48%, black 55%, transparent 95%);
@@ -12242,6 +12302,7 @@ a.active {
     height: 233px;
     aspect-ratio: auto 332 / 233;
     z-index: 2;
+    overflow: hidden;
 }
 
 .tutor-profile {
@@ -12266,12 +12327,13 @@ a.active {
     background-color: rgb(33, 52, 82, 0.5);
     color: white;
     border-radius: 24px;
-    font-weight: 700;
-    font-size: 9pt;
+    font-weight: 500;
+    font-size: 10pt;
     cursor: pointer;
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: 10px;
+    padding-left: 10px;
     border: 1px solid transparent;
+    text-transform: uppercase;
 }
 
 .blur-btn:hover {
