@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CourseController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,10 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/series/{slug}',[\App\Http\Controllers\CourseController::class,'index'])
+Route::get('/series/{slug}/episodes/{number}', [CourseController::class, 'beginCourse'])
+    ->name('course.episode');
+
+Route::get('/series/{slug}', [CourseController::class, 'index'])
     ->name('course');
-require __DIR__.'/auth.php';
+
+require __DIR__ . '/auth.php';

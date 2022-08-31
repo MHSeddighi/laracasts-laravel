@@ -31,8 +31,13 @@
         display: none;
     }
 
-    nav.navbar-links a {
-        display: none;
+    nav.navbar-links{
+        display: none !important;
+    }
+
+    nav.navbar-links-menu{
+        order:0 !important;
+        display: block !important;
     }
 
     img.tutor-background {

@@ -46,7 +46,7 @@
 
         @yield('header-navbar')
 
-        <div class="d-flex gap-1">
+        <div class="d-flex gap-1 align-items-center">
             <button class=" btn-search border-radius-3" type="button" data-bs-toggle="modal" data-bs-target="#searchId">
                 <svg fill="#fff" width="16px" height="16px" viewBox="0 0 15 15">
                     <use xlink:href="{{asset("images/icons.svg#icon-search")}}"></use>
@@ -63,13 +63,14 @@
             <div class="modal" id="login-form">@include('auth.login')</div>
             <div class="modal" id="register-form">@include('auth.register')</div>
             @endguest
+            @auth
+            <a class="p-1 ms-1" href="#" data-bs-toggle="modal" data-bs-target="#profile">
+                <img class="border-radius-2" src="{{ asset("images/default-avatar.png ") }}" width="40" height="40" />
+            </a>
+            <div class="modal" id="profile">@include('layouts.profile')</div>
+            @endauth
+            @yield('header-navbar-end')
         </div>
-        @auth
-        <a class="p-1 ms-1" href="#" data-bs-toggle="modal" data-bs-target="#profile">
-            <img class="border-radius-2" src="{{ asset("images/default-avatar.png ") }}" width="40" height="40" />
-        </a>
-        <div class="modal" id="profile">@include('layouts.profile')</div>
-        @endauth
     </nav>
     <main>
         @yield('content')

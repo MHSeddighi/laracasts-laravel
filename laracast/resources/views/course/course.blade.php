@@ -1,15 +1,65 @@
 @extends('layouts.app')
 
 @section('header-navbar')
-<nav class="navbar-links d-flex gap-5 h-100">
-    <a href="http://127.0.0.1:8000/series/learn-laravel-forge-2022-edition#" class="">MY LIBRARY</a>
-    <a href="#">TOPICS</a>
-    <a href="#" class="active">SERIES</a>
-    <a href="#">LARABITS</a>
-    <a href="#">DISCUSSIONS</a>
-    <a href="#">PODCAST</a>
-</nav>
+    <nav class="navbar-links d-flex gap-5 h-100">
+        <a href="http://127.0.0.1:8000/series/learn-laravel-forge-2022-edition#" class="">MY LIBRARY</a>
+        <a href="#">TOPICS</a>
+        <a href="#" class="active">SERIES</a>
+        <a href="#">LARABITS</a>
+        <a href="#">DISCUSSIONS</a>
+        <a href="#">PODCAST</a>
+    </nav>
 @endsection
+
+@section('header-navbar-end')
+    <nav class="navbar-links-menu d-none">
+        <button class="outline-0 border-0 bg-transparent" type="button" data-bs-toggle="modal" data-bs-target="#menu">
+            <img src="{{ asset('images/icons/menu.svg') }}" width="30" height="30">
+        </button>
+        <div class="modal" id="menu">
+            <div class="modal-dialog modal-fullscreen-xl-down" style="">
+                <div class="modal-content text-center m-0 h-100 bg-blue overflow-scroll" style="min-height:100%">
+                    <div class="bg-blue z-index-100" style="height:50px"></div>
+                    <button class="outline-0 border-0 close-btn p-1 close-hover" data-bs-dismiss="modal">
+                        <svg  width="25px" height="25px" color="#fff">
+                            <use xlink:href="{{ asset('images/icons/close.svg') }}#close"></use>
+                        </svg>
+                    </button>
+                    <a href="#" class="text-decoration-none my-2 text-white">
+                        <h1>Home</h1>
+                        <div class="font-gray fs-6">//is where the php is</div>
+                    </a> 
+                    <a href="#" class="text-decoration-none my-2 text-white">
+                        <h1>Topics</h1>
+                        <div class="font-gray fs-6">//just browsing?</div>
+                    </a>
+
+                    <a href="http://127.0.0.1:8000/series/learn-laravel-forge-2022-edition#" class="text-decoration-none my-2 text-white">
+                        <h1>Series</h1>
+                        <div class="font-gray fs-6">//it's what you are here for</div>
+                    </a>
+
+                    <a href="#" class="text-decoration-none my-2 text-white">
+                        <h1>Larabits</h1>
+                        <div class="font-gray fs-6">//got fibe minutes?</div>
+                    </a>
+
+                    <a href="#" class="text-decoration-none my-2 text-white">
+                        <h1>Podcast</h1>
+                        <div class="font-gray fs-6">//rest those eyes</div>
+                    </a>
+
+                    <a href="#" class="text-decoration-none my-2 text-white">
+                        <h1>Discussions</h1>
+                        <div class="font-gray fs-6">//let it all about</div>
+                    </a>
+                    <div class="bg-blue z-index-100" style="height:40px"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+@endsection
+
 @section('content')
 
 <img class="tutor-background" src="{{$tutor_image}}">
@@ -47,7 +97,7 @@
                     <h1>{{ $course->title }}</h1>
                     <a href="#" class="btn blur-btn mt-2 mb-5 ">{{$course->category}}</a>
                     <p class="course-description">{{$course->description}}</p>
-                    <a class="btn blur-btn my-3 bg-white text-black-c px-4 me-2 text-center">
+                    <a href="{{ route('course.episode',['slug'=>$course->slug,'number'=>1,'course'=>$course]) }}" class="btn blur-btn my-3 bg-white text-black-c px-4 me-2 text-center">
                         <svg class="me-2 my-auto" width="10" height="12">
                             <use xlink:href="{{asset('images/play-button2.svg#play-button')}}"></use>
                         </svg>
@@ -124,4 +174,10 @@
     </div>
     
 </div>
+
+<script defer>
+    course_info=document.getElementsByClassName('course-info');
+    title=course_info[0].children[0].innerText;
+    document.title=title;
+</script>
 @endsection

@@ -11621,8 +11621,13 @@ textarea.form-control-lg {
         display: none;
     }
 
-    nav.navbar-links a {
-        display: none;
+    nav.navbar-links{
+        display: none !important;
+    }
+
+    nav.navbar-links-menu{
+        order:0 !important;
+        display: block !important;
     }
 
     img.tutor-background {
@@ -12470,5 +12475,25 @@ a.active {
 
 .bg-lightgray {
     background-color: lightgray;
+}
+
+.bg-transparent{
+    background:transparent;
+}
+
+.close-hover:hover svg{
+    color:blue;
+}
+
+.close-hover:hover {
+    background:#fafafa;
+}
+
+.close-btn{
+    position:absolute;
+    right:25px;
+    top:25px;
+    background:#1A2F51;
+    border-radius:4px;
 }
 

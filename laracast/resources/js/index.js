@@ -31,3 +31,7 @@ function hasTag(element, tagName) {
 function isSet(obj) {
     return (obj != null && obj != undefined) ? true : false;
 }
+
+function changeTabTitle(title){
+    document.title=title;
+}
