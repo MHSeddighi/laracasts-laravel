@@ -730,7 +730,7 @@ a.active {
 .delimeter-line {
     width: 1px;
     height: 1.5rem;
-    background: rgb(128, 128, 128, 0.2);
+    background: rgba(190, 188, 188, 0.2);
     align-self: center;
 }
 
@@ -798,4 +798,61 @@ a.active {
     top:25px;
     background:#1A2F51;
     border-radius:4px;
+}
+
+.br-bg-hover:hover{
+    border:1px solid #2F4870;
+    background-color: #0E1928;
+    transition:all 0.4s ease-out;
+}
+
+.br-bg-hover{
+    border:1px solid transparent;
+    border-radius: 25px;
+}
+
+.position-sticky-top{
+    position: sticky;
+    -webkit-position:sticky;
+    top:0;
+}
+
+.position-sticky-bottom{
+    position: sticky;
+    -webkit-position:sticky;
+    bottom:0;
+}
+
+.position-fixed-top{
+    position: fixed;
+    top:0;
+}
+
+.position-fixed-bottom{
+    position: fixed;
+    bottom:0;
+}
+
+.blue-hover:hover > *{
+    fill:#1b61d1;
+    color: #1b61d1;
+}
+
+.episode-info img{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    opacity:0.1;
+}
+
+.episode-info{
+    background:linear-gradient(to right,#8D61EB 0 ,#B171BF 50%);
+    border-radius:25px;
+    position:relative;
+    overflow:hidden;
+}
+
+.red-hover:hover svg{
+    color:red;
+    transition:color 0.2s ease-in-out;
 }

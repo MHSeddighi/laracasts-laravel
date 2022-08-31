@@ -97,7 +97,7 @@
                     <h1>{{ $course->title }}</h1>
                     <a href="#" class="btn blur-btn mt-2 mb-5 ">{{$course->category}}</a>
                     <p class="course-description">{{$course->description}}</p>
-                    <a href="{{ route('course.episode',['slug'=>$course->slug,'number'=>1,'course'=>$course]) }}" class="btn blur-btn my-3 bg-white text-black-c px-4 me-2 text-center">
+                    <a href="{{ route('course.episode',['slug'=>$course->slug,'number'=>1]) }}" class="btn blur-btn my-3 bg-white text-black-c px-4 me-2 text-center">
                         <svg class="me-2 my-auto" width="10" height="12">
                             <use xlink:href="{{asset('images/play-button2.svg#play-button')}}"></use>
                         </svg>

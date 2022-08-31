@@ -47,21 +47,6 @@
     </div>
 
 </div>
-<div class="modal fade" id="searchId">
-    <div class="modal-dialog">
-        <div class="px-3 modal-content">
-            <div class="d-flex search-modal">
-                <a href="#">
-                    <svg class="m-2" fill="rgb(107, 78, 238)" viewBox="0 0 12 12" width="16px">
-                        <use xlink:href="images/icons.svg#icon-search"></use>
-                    </svg>
-                </a>
-                <input id="search-input" class="search-input bg-white flex-grow-1" type="search"
-                    placeholder="Press'/'anywhere to search.">
-            </div>
-        </div>
-    </div>
-</div>
 <div class="py-3 text-center" style="font-size:25px;">
     Push your web development skills <span class="text-primary">to the next level</span>, through
     <br><span class="text-primary"> expert screencasts</span> on Laravel, Vue, and so much more.

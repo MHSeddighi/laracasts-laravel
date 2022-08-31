@@ -19,7 +19,12 @@ class CourseController extends Controller
 
     public function beginCourse($slug, $number)
     {
-        return view('course.episode')->with([]);
+        $course = Course::where('slug', $slug)->first();
+        $episode = $course->episodes->where('number', 1)->first();
+        return view('course.episode')->with([
+            'course' => $course,
+            'episode' => $episode
+        ]);
     }
 
     public function create()
