@@ -16,7 +16,7 @@ class Episode extends Model
 
     public function link()
     {
-        return $this->morphOne(Link::class, 'linkalbe');
+        return $this->morphOne(Link::class, 'linkable');
     }
 
     public function comments()
@@ -32,5 +32,10 @@ class Episode extends Model
     public function course()
     {
         return $this->belongsTo(Course::class);
+    }
+
+    public function watches()
+    {
+        return $this->belongsToMany(User::class,'watches')->withPivot('percent')->using(Watch::class);
     }
 }

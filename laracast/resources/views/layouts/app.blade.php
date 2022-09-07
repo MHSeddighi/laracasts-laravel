@@ -28,7 +28,8 @@
 <body>
     <nav class="navbar justify-content-center navbar-background m-0">
         <a class="navbar-brand" href="#">
-            <img id="image" width="22px" height="22px" src="{{ asset('images/lary-switch-to-subscription-icon.svg')}}" />
+            <img id="image" width="22px" height="22px"
+                src="{{ asset('images/lary-switch-to-subscription-icon.svg')}}" />
         </a>
         <ul class="navbar-nav">
             <li class="navbar-item">
@@ -41,7 +42,7 @@
     </nav>
     <nav class="navbar mt-0 justify-content-between px-3 bg-blue">
         <a class="navbar-brand" href="#">
-            <img class="" src="{{ asset("images/logo-white.svg") }} " width="145" height="17" />
+            <img class="" src="{{ asset('images/logo-white.svg') }} " width="145" height="17" />
         </a>
 
         @yield('header-navbar')
@@ -49,7 +50,7 @@
         <div class="d-flex gap-1 align-items-center">
             <button class=" btn-search border-radius-3" type="button" data-bs-toggle="modal" data-bs-target="#searchId">
                 <svg fill="#fff" width="16px" height="16px" viewBox="0 0 15 15">
-                    <use xlink:href="{{asset("images/icons.svg#icon-search")}}"></use>
+                    <use xlink:href="{{asset('images/icons.svg#icon-search')}}"></use>
                 </svg>
             </button>
             <div class="modal fade" id="searchId">
@@ -80,7 +81,8 @@
             @endguest
             @auth
             <a class="p-1 ms-1" href="#" data-bs-toggle="modal" data-bs-target="#profile">
-                <img class="border-radius-2" src="{{ asset("images/default-avatar.png ") }}" width="40" height="40" />
+                <img class="border-radius-2" src="{{ asset('images/default-avatar.png') }}" width="40" height="40"
+                    alt="default avatar" />
             </a>
             <div class="modal" id="profile">@include('layouts.profile')</div>
             @endauth
@@ -91,21 +93,25 @@
         @yield('content')
     </main>
     <section class="home-footer position-relative overflow-hidden">
-        <img class="footer-background" src="{{ asset("images/footer-gang.svg") }}" />
+        <img class="footer-background" src="{{ asset(" images/footer-gang.svg") }}" />
         <div class="d-flex flex-column text-white gap-5 font-poppins pt-0 z-index-100">
             <div class="footer-email gap-4 mb-5">
-                <h2 class="text-center align-self-center mt-5" style="max-width:580px;">Want us to email you occasionally with Laracasts news?</h2>
+                <h2 class="text-center align-self-center mt-5" style="max-width:580px;">Want us to email you
+                    occasionally with Laracasts news?</h2>
                 <form class="align-self-center position-relative" method="Post" action="">
                     @csrf
-                    <input type="email" class="rounded-pill w-100 px-3 border-0" placeholder="Enter your email address" style="min-width:400px;height:45px;" />
-                    <input type="submit" value="{{ __('SUBSCRIBE') }}" class="position-absolute py-2 px-3 h-100 btn btn-primary rounded-pill" style="right:0;" />
+                    <input type="email" class="rounded-pill w-100 px-3 border-0" placeholder="Enter your email address"
+                        style="min-width:400px;height:45px;" />
+                    <input type="submit" value="{{ __('SUBSCRIBE') }}"
+                        class="position-absolute py-2 px-3 h-100 btn btn-primary rounded-pill" style="right:0;" />
                 </form>
             </div>
             <div class="d-flex text-white gap-1">
                 <div class="flex-grow-2">
-                    <img src="{{ asset("images/logo-white.svg") }} " width="180" height="25">
+                    <img src="{{ asset('images/logo-white.svg') }} " width=" 180" height="25">
                     <p class="mt-4" style="max-width: 400px">
-                        Nine out of ten doctors recommend Laracasts over competing brands. Come inside, see for yourself, and massively level up your development skills in the process.
+                        Nine out of ten doctors recommend Laracasts over competing brands. Come inside, see for
+                        yourself, and massively level up your development skills in the process.
                     </p>
                 </div>
                 <div class="footer-link flex-grow-1">
@@ -146,7 +152,8 @@
             </div>
             <div class="text-center font-poppins" style="color: #b0a7a7;">
                 <hr>
-                <div class="mx-auto" style="line-break:auto;max-width:500px; ">© Laracasts 2022. All rights reserved. Yes, all of them. That means you, Todd.
+                <div class="mx-auto" style="line-break:auto;max-width:500px; ">© Laracasts 2022. All rights reserved.
+                    Yes, all of them. That means you, Todd.
                     Proudly hosted with Laravel Forge and DigitalOcean .</div>
             </div>
         </div>

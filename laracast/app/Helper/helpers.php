@@ -22,3 +22,7 @@ function convertSecondsToClockTime($seconds)
     $remainSeconds = sprintf("%02d", $seconds % 60);
     return "${minutes}m ${remainSeconds}s";
 }
+
+function makePassHash($password){
+    return Hash::make($password);
+}

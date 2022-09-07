@@ -18,7 +18,7 @@ class LinkSeeder extends Seeder
         $json=Storage::disk('local')->get('/json/link.json');
         $links=json_decode($json);
         foreach($links as $k=>$link){
-            link::query()->updateOrCreate([
+            Link::query()->updateOrCreate([
                 "id"=>$link->id,
                 "url" => $link->url,
                 "source"=>$link->source,

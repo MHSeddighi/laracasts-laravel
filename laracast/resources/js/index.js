@@ -5,8 +5,6 @@ const linkContainer = document.getElementsByClassName('navbar-links')[0]
 const links = linkContainer.children
 
 
-
-
 for (let i = 0; i < links.length; i++) {
     links[i].addEventListener('click', function (event) {
         for (let j = 0; j < links.length; j++) {
@@ -34,4 +32,13 @@ function isSet(obj) {
 
 function changeTabTitle(title){
     document.title=title;
+}
+
+function toggleVisibility(){
+    element=document.getElementById('password');
+    if(element.type=="password"){
+        element.type="text";
+    }else{
+        element.type="password";
+    }
 }

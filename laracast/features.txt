@@ -1,2 +1,10 @@
-adding persion language translation
 adding complete percent of courses
+fixing customize checkbox in input
+password forgotten in login
+fix google login
+email verification
+episode radial progress bar
+video streaming
+display again login or register modal if user got any error
+comments
+video posters

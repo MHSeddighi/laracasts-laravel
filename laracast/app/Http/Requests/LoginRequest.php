@@ -37,8 +37,7 @@ class LoginRequest extends FormRequest
     public function authenticate(){
         if(Auth::attempt(['username'=>$this->username,'password'=>$this->password],$this->boolean('remember'))){
             $this->session()->regenerate();
-
-            return redirect()->intended();
+            return redirect(url()->previous());
         }
         
         return back()->withErrors([

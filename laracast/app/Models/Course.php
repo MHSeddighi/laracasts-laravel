@@ -50,9 +50,5 @@ class Course extends Model
     {
         return $this->hasMany(Episode::class)->orderBy('number');
     }
-
-    public function watch()
-    {
-        return $this->belongsToMany(User::class);
-    }
+    
 }

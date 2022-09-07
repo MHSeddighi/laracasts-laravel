@@ -17,7 +17,7 @@ class LoginUserController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect(url()->previous());
     }
 
     public function create(){

@@ -78,8 +78,8 @@ class User extends Authenticatable
         return $this->belongsToMany(Course::class);
     }
 
-    public function watch()
+    public function watches()
     {
-        return $this->belongsToMany(Course::class);
+        return $this->belongsToMany(Episode::class,'watches')->withPivot('percent')->using(Watch::class);
     }
 }

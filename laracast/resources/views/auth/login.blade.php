@@ -1,5 +1,5 @@
-<div class="modal-dialog ">
-    <form class="p-4 pt-5 login-form" action="{{ route('login.store') }}" method="Post">
+<div class="modal-dialog">
+    <form class="p-4 pt-5 login-form  overflow-y-auto" action="{{ route('login.store') }}" method="Post">
         @csrf
         <span class="fs-2 fw-bolder text-center" style="font-family:cabinet;">Welcome to the
             Laracast
@@ -11,9 +11,14 @@
             @endforeach
         </div>
         @endif
-        <input class="login-input bg-light border-radius-1 px-3" id="username" name="username" type="text" placeholder="{{__('Username')}}" autofocus>
+        <input class="login-input bg-light border-radius-1 px-3" id="username" name="username" type="text"
+            placeholder="{{__('Username')}}" autofocus>
 
-        <input class="login-input bg-light border-radius-1 px-3 mb-1" name="password" id="password" type="password" placeholder="{{__('Password')}}">
+        <div class="border-radius-1 position-relative overflow-hidden">
+            <input class="login-input border-radius-1 bg-light px-3 mb-1 w-100" name="password" id="password"
+                type="password" placeholder="{{__('Password')}}">
+            <input class="position-absolute parent-right border-radius-2" type="checkbox" onclick="toggleVisibility()">
+        </div>
 
         <div class="d-flex flex-row">
             <div class="me-auto">
@@ -39,5 +44,14 @@
             <span class="align-self-center">{{ __('Continue with Facebook')}}</span>
         </a>
     </form>
-
+    <script>
+        function toggleVisibility() {
+            element = document.getElementById('password');
+            if (element.type == "password") {
+                element.type = "text";
+            } else {
+                element.type = "password";
+            }
+        }
+    </script>
 </div>

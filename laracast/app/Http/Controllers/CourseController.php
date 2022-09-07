@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Course;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\User ; 
 
 class CourseController extends Controller
 {
@@ -20,10 +22,20 @@ class CourseController extends Controller
     public function beginCourse($slug, $number)
     {
         $course = Course::where('slug', $slug)->first();
-        $episode = $course->episodes->where('number', 1)->first();
+        $episode = $course->episodes->where('number', $number)->first();
+        $currentUserId=Auth::id();
+        $watchesList=null;
+
+        if (!is_null($currentUserId)) {
+            $currentUser = User::find($currentUserId);
+            $watchesList = $currentUser->watches->where('course_id',$course->id);
+        }
+        
         return view('course.episode')->with([
             'course' => $course,
-            'episode' => $episode
+            'tutor' => $course->tutor->user,
+            'episode' => $episode,
+            'watchesList'=>$watchesList
         ]);
     }
 

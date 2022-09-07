@@ -28,7 +28,8 @@ class DatabaseSeeder extends Seeder
             VideoSeeder::class,
             SectionSeeder::class,
             LinkSeeder::class,
-            EpisodeSeeder::class
+            EpisodeSeeder::class,
+            WatchSeeder::class
         ]);
     }
 }

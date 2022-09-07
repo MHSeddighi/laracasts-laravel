@@ -14,16 +14,16 @@ return new class extends Migration
     public function up()
     {
         Schema::create('watches', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->primary(['episode_id','user_id']);
             $table->foreignId('user_id')->constrained()
-                ->onUpdate('cascade')
+                ->onUpdate('restrict')
                 ->onDelete('cascade');
 
-            $table->foreignId('course_id')->constrained()
-                ->onUpdate('cascade')
+            $table->foreignId('episode_id')->constrained()
+                ->onUpdate('restrict')
                 ->onDelete('cascade');
-            $table->integer('complete-percent');
+            $table->integer('percent');
+
         });
     }
 
