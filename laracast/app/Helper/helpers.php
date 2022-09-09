@@ -15,12 +15,12 @@ function convertSecondsToClockTime($seconds)
     if ($hours > 0) {
         $minutes = sprintf("%02d", ($seconds / 60) % 60);
         $remainSeconds = sprintf("%02d", $seconds % 60);
-        return "${hours}h ${minutes}m ${remainSeconds}s";
+        return "${hours}:${minutes}:${remainSeconds}";
     }
 
     $minutes = ($seconds / 60) % 60;
     $remainSeconds = sprintf("%02d", $seconds % 60);
-    return "${minutes}m ${remainSeconds}s";
+    return "${minutes}:${remainSeconds}";
 }
 
 function makePassHash($password){

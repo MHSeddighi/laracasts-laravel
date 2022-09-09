@@ -6,6 +6,7 @@ use App\Models\Course;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User ; 
+use Illuminate\Support\Facades\Storage;
 
 class CourseController extends Controller
 {
@@ -30,7 +31,7 @@ class CourseController extends Controller
             $currentUser = User::find($currentUserId);
             $watchesList = $currentUser->watches->where('course_id',$course->id);
         }
-        
+
         return view('course.episode')->with([
             'course' => $course,
             'tutor' => $course->tutor->user,

@@ -1,18 +1,20 @@
 const paragraph = document.querySelectorAll('.max-height-limitation')
-const heightViolation = new Event('heightViolation')
 const threePoint = document.createElement('span')
 const linkContainer = document.getElementsByClassName('navbar-links')[0]
-const links = linkContainer.children
+const links = linkContainer==undefined ? undefined:linkContainer.children
 
 
-for (let i = 0; i < links.length; i++) {
-    links[i].addEventListener('click', function (event) {
-        for (let j = 0; j < links.length; j++) {
-            links[j].classList.remove('active')
-        };
-        event.target.classList.add('active')
-    });
+if(links!=undefined){
+    for (let i = 0; i < links.length; i++) {
+        links[i].addEventListener('click', function (event) {
+            for (let j = 0; j < links.length; j++) {
+                links[j].classList.remove('active')
+            };
+            event.target.classList.add('active')
+        });
+    }
 }
+
 
 function hasTag(element, tagName) {
     let childrens = element.children;

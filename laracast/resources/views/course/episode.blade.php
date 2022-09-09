@@ -59,6 +59,9 @@
                 </figure>
                 <hr class="bg-black">
             </div>
+            @php
+            $thisEpsPercent=0;
+            @endphp
             <div class="overflow-auto d-flex flex-column gap-3 my-2 px-2">
                 @foreach($course->episodes as $eps)
                 <section class="d-flex gap-3 w-100 py-2 br-bg-hover px-2">
@@ -71,6 +74,8 @@
                     $percent=0;
                     }else{
                     $percent=$pivotEpisode->pivot->percent;
+                    if($episode->number==$eps->number)
+                    $thisEpsPercent=$pivotEpisode->pivot->percent;
                     }
                     }
                     @endphp
@@ -120,7 +125,7 @@
                                 <div class="d-flex search-modal">
                                     <a href="#">
                                         <svg class="m-2" fill="rgb(107, 78, 238)" viewBox="0 0 12 12" width="16px">
-                                            <use xlink:href="images/icons.svg#icon-search"></use>
+                                            <use xlink:href="{{ asset('images/icons.svg#icon-search') }}"></use>
                                         </svg>
                                     </a>
                                     <input id="search-input" class="search-input bg-white flex-grow-1" type="search"
@@ -151,7 +156,7 @@
             </nav>
 
             @auth
-                @includeWhen($episode->is_public==true,'video',[video=>$episode->video])    
+            @includeWhen($episode->is_public==true,'video',['video'=>$episode->video,'percent'=>$thisEpsPercent])
             @endauth
             <section class="episode-info p-5 m-3 mx-5 font-cabin text-white">
                 <img src="{{ $course->image->src }}">
