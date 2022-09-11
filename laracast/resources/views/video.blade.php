@@ -1,5 +1,16 @@
 <div class="video-container">
     <div class="video-controls-background">
+        <div class="video-handlers">
+        <div class="timeline-container">
+            <div class="empty">
+                <div class="downloaded">
+                    <div class="thumb"></div>
+                    <div class="slider">
+
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="video-controls-container d-flex align-items-center gap-1">
             <div class="controls ">
                 <button class="play-pause-btn paused ">
@@ -12,10 +23,6 @@
                             d="M8 5a2 2 0 0 0-2 2v10a2 2 0 1 0 4 0V7a2 2 0 0 0-2-2zm8 0a2 2 0 0 0-2 2v10a2 2 0 1 0 4 0V7a2 2 0 0 0-2-2z" />
                     </svg>
                 </button>
-            </div>
-
-            <div class="timeline-container">
-
             </div>
 
             <div class="volume-container d-flex align-items-center">
@@ -41,7 +48,7 @@
             </div>
 
             <button class="speed-btn">
-                1x
+                1.0x
             </button>
             <button class="captions-btn">
                 <svg viewBox="0 0 24 24" height="27" wdith="27">
@@ -74,17 +81,14 @@
                     <path d="M18 3h2v4h4v2h-6v-6zm6 12v2h-4v4h-2v-6h6zm-18 6h-2v-4h-4v-2h6v6zm-6-12v-2h4v-4h2v6h-6z" />
                 </svg>
             </button>
-            <input type="range">
-            <!-- <video class="p-4" src="{{ $video->url }}" width="100%">
-
-        </video> -->
         </div>
+        
     </div>
+</div>
     <video class="p-4" width="inherit" height="inherit" preload="auto">
         <source src="{{ asset('storage/learn-laravel-forge-2022-Edition-01-what-is-laravel-forge.mp4') }}"
             type="video/mp4">
         Your browser does not support the video tag.
     </video>
-
 
 </div>

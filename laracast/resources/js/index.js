@@ -1,3 +1,5 @@
+require('./events');
+
 const paragraph = document.querySelectorAll('.max-height-limitation')
 const threePoint = document.createElement('span')
 const linkContainer = document.getElementsByClassName('navbar-links')[0]

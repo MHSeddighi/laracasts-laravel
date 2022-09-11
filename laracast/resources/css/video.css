@@ -9,7 +9,10 @@
 
 :root{
     --volume-slider-thumb-position:100%;
+    --progress-position:40%;
+    --downloaded-position:60%;
 }
+
 
 
 .video-container{
@@ -36,10 +39,6 @@
 }
 
 .video-controls-container{
-    position:absolute;
-    bottom:0;
-    right:0;
-    left:0;
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 10px;
@@ -62,8 +61,66 @@
     transition:all 0.2s ease-in-out;
 }
 
-.video-controls-container .controls{
+.video-handlers{
+    position: absolute;
+    bottom:0;
+    width:95%;
+    display:flex;
+    flex-direction: column;
+    left:50%;
+    translate:-50% 0;
+}
 
+.timeline-container{
+    position: relative;
+    width:100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+
+
+.timeline-container .downloaded{
+    background: linear-gradient(to right,rgb(180, 177, 177) var(--downloaded-position),transparent var(--downloaded-position));
+    height:5px;
+    width:100%;
+    position:relative;
+    z-index:50;
+}
+
+.timeline-container .empty{
+    background: rgba(150, 150, 150,0.2);
+    height:5px;
+    width:100%;
+    position:relative;
+    z-index:0;
+}
+
+.timeline-container .slider{
+    background: linear-gradient(to right,rgb(179, 11, 11) var(--progress-position),transparent var(--progress-position));
+    height:5px;
+    width:100%;
+    position:relative;
+    z-index:100;
+}
+
+.timeline-container .thumb{
+    position:absolute;
+    left:var(--progress-position); 
+    background-color: rgb(179, 11, 11);
+    border-radius: 50%;
+    height:15px;
+    width:15px;
+    aspect-ratio: 1 / 1;
+    margin-top:-5px;
+    translate: -5px 0;
+    z-index:150;
+    opacity: 0;
+    transition:opacity 0.1s ease-out;
+}
+
+.timeline-container:hover .thumb{
+    opacity:1;
 }
 
 .controls .play-pause-btn{
@@ -86,19 +143,16 @@
     display:none;
 }
 
-.play-pause-btn .play-icon{
-    
-}
-
-
 
 .timeline-container{
-
+    display: flex;
+    align-items: center;
+    height:7px;
+    cursor: pointer;
 }
 
-
-.volume-container .volume-btn{
-
+.timeline-container .timeline{
+    
 }
 
 
@@ -160,6 +214,7 @@
 
 .video-controls-container .speed-btn{
     margin-left:auto;
+    color:#fafafa;
 }
 
 .fullscreen-btn{
