@@ -1,12 +1,19 @@
-require('./events');
+const paragraph = document.querySelectorAll('.max-height-limitation');
+const threePoint = document.createElement('span');
+const linkContainer = document.getElementsByClassName('navbar-links')[0];
+const links = linkContainer==undefined ? undefined:linkContainer.children;
+const chckBoxLogin=document.querySelector('.password-box input[type=checkbox]');
+const chckBoxPassword=document.querySelector('.register-password-box input[type=checkbox]');
 
-const paragraph = document.querySelectorAll('.max-height-limitation')
-const threePoint = document.createElement('span')
-const linkContainer = document.getElementsByClassName('navbar-links')[0]
-const links = linkContainer==undefined ? undefined:linkContainer.children
+chckBoxLogin.addEventListener('click',e=>{
+    toggleVisibility('login-password');
+});
 
+chckBoxPassword.addEventListener('click',e=>{
+    toggleVisibility('register-password');
+});
 
-if(links!=undefined){
+if(links!==undefined){
     for (let i = 0; i < links.length; i++) {
         links[i].addEventListener('click', function (event) {
             for (let j = 0; j < links.length; j++) {
@@ -38,8 +45,8 @@ function changeTabTitle(title){
     document.title=title;
 }
 
-function toggleVisibility(){
-    element=document.getElementById('password');
+function toggleVisibility(id){
+    let element=document.getElementById(id);
     if(element.type=="password"){
         element.type="text";
     }else{

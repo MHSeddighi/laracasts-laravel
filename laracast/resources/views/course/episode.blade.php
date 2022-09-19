@@ -1,5 +1,4 @@
-<html>
-
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,7 +9,7 @@
     <title>{{ $course->title.':'.$episode->title }}</title>
 
     <!-- Scripts -->
-    <script defer src="{{ asset('js/app.js') }}"></script>
+    <script defer src="{{ asset('js/app.js') }}" type="text/javascript"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -104,7 +103,7 @@
             </div>
         </aside>
 
-        <div class="col-md-9 position-fixed hide-scrollbar"
+        <div class="col-md-9 position-fixed hide-scrollbar "
             style="background:#151F32;top:0;bottom:0;right:0;overflow-y:auto;">
             <nav class="navbar mt-0 justify-content-between px-3 bg-blue"
                 style="background: linear-gradient(to right,#0E1726 0,#395785 50%,#0E1726 100%);">
@@ -142,15 +141,12 @@
                     <button class="btn mx-2 btn-outline-primary" data-bs-toggle="modal" data-bs-target="#register-form">
                         {{__('SIGN UP')}}
                     </button>
-                    <div class="modal" id="login-form">@include('auth.login')</div>
-                    <div class="modal" id="register-form">@include('auth.register')</div>
                     @endguest
                     @auth
                     <a class="p-1 ms-1" href="#" data-bs-toggle="modal" data-bs-target="#profile">
                         <img class="border-radius-2" src="{{ asset('images/default-avatar.png') }}" width="40"
                             height="40" />
                     </a>
-                    <div class="modal" id="profile">@include('layouts.profile')</div>
                     @endauth
                 </div>
             </nav>
@@ -270,8 +266,9 @@
                 </section>
             </div>
         </div>
-
-
+        <div class="modal" id="profile">@include('layouts.profile')</div>
+        <div class="modal" id="login-form">@include('auth.login')</div>
+        <div class="modal" id="register-form">@include('auth.register')</div>
     </main>
 </body>
 

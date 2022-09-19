@@ -1,10 +1,15 @@
 <div class="modal-dialog">
-    <div class="card p-4 border-radius-2 register-form">
+    <div class="card border-radius-2 register-form">
         <form action="{{ route('register') }}" method="Post">
-            <div class="text-center fs-3 mb-3" style="font-family:cabinet;">
-                {{__('Create account')}}
-            </div>
             @csrf
+            <button class="outline-0 border-0 close-btn close-hover p-1 lighting-hover parent-right-top" data-bs-dismiss="modal">
+                <svg width="25px" height="25px" color="#fff">
+                    <use xlink:href="{{ asset('images/icons/close.svg') }}#close"></use>
+                </svg>
+            </button>
+            <h2 class="text-center m-3 font-cabin">
+                {{__('Create account')}}
+            </h2>
 
             @if($errors->any())
             <div class="alert alert-danger">
@@ -13,17 +18,29 @@
                 @endforeach
             </div>
             @endif
-            <label class="col-md-4 " for="username">{{__('Username')}} :</label>
+            <label class="col-md-5 " for="username">{{__('Username')}} :</label>
             <input class="register-input bg-light border-radius-1" name="username" id="username" type="text" placeholder="Enter a username" value="{{ old('username') }}" autofocus><br><br>
 
-            <label class="col-md-4 form-label" for="email">{{__('Email')}} :</label>
+            <label class="col-md-5 form-label" for="email">{{__('Email')}} :</label>
             <input class="bg-light border-radius-1 register-input" name="email" id="email" type="text" placeholder="Enter your email" value="{{ old('email') }}"><br><br>
 
-            <label class="col-md-4 form-label" for="password">{{__('Password')}} :</label>
-            <input class="bg-light border-radius-1 register-input" name="password" id="password" type="password" placeholder="Enter your password" value="{{ old('password') }}"><br><br>
+            <label class="col-md-5 form-label" for="register-password">{{__('Password')}} :</label>
+            <div class="position-relative d-flex align-items-center register-password-box">
+                <input class="bg-light border-radius-1 register-input" name="password" id="register-password" type="password" placeholder="Enter your password" value="{{ old('password') }}"><br><br>
+                <input class="position-absolute parent-right" type="checkbox">
+            </div>
 
-            <label class="col-md-4 form-label" for="confirm-password">{{__('Confirm password')}} :</label>
-            <input name="password_confirmation" class="bg-light border-radius-1 register-input" id="confirm-password" placeholder="Enter again the password" type="password"><br><br>
+            <label class="col-md-5 form-label mt-4" for="confirm-password">{{__('Confirm password')}} :</label>
+            <div class="position-relative d-flex align-items-center mb-4">
+                <input name="password_confirmation" class="bg-light border-radius-1 register-input" id="confirm-password" placeholder="Enter again the password" type="password" autocomplete="off"><br><br>
+            </div>
+            <div class="mb-5">
+                <lable for="occuption"> {{ __('Choose your occuption') }}</lable>
+                <select class="w-100" name="occuption" id="occuption">
+                    <option>{{__('Tutor')}}</option>
+                    <option>{{__('Developer')}}</option>
+                </select>
+            </div>
 
             <button class="btn submit btn-primary fs-5 align-item-center w-100" id="submit">
                 {{ __('Sign Up')}}

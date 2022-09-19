@@ -81,3 +81,35 @@
     }
 
 }
+
+@media screen and (max-height: 560px){
+    .modal-dialog .login-modal{
+        border-radius:0;
+        border:0;
+        left:0;
+        top:0;
+        min-width:100vw;
+        min-height:100vh;
+        overflow-y:auto;
+        transform:none;
+    }
+
+    .login-modal .login-form{
+        padding-right:30%;
+        padding-left:30%;
+    }
+
+    .modal-dialog .register-form{
+        border-radius:0;
+        border:0;
+        left:0;
+        top:0;
+        min-width:100vw;
+        min-height:100vh;
+        overflow-y:auto;
+        transform:none;
+        padding-right:30%;
+        padding-left:30%;
+    }
+
+}

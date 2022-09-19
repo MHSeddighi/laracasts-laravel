@@ -1,4 +1,3 @@
-<!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
@@ -89,7 +88,7 @@
             @yield('header-navbar-end')
         </div>
     </nav>
-    <main>
+    <main class="">
         @yield('content')
     </main>
     <section class="home-footer position-relative overflow-hidden">

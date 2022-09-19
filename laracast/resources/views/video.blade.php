@@ -82,12 +82,14 @@
                 </svg>
             </button>
         </div>
-        
+
     </div>
 </div>
-    <video class="p-4" width="inherit" height="inherit" preload="auto">
+    <video class="p-4" width="inherit" height="inherit" playsinline>
         <source src="{{ asset('storage/learn-laravel-forge-2022-Edition-01-what-is-laravel-forge.mp4') }}"
             type="video/mp4">
+        <source src="{{ asset('storage/learn-laravel-forge-2022-Edition-01-what-is-laravel-forge.webm') }}"
+                type="video/webm">
         Your browser does not support the video tag.
     </video>
 

@@ -1,17 +1,6 @@
 @import "fonts.css";
 @import "media-queries.css";
-
-@keyframes popup {
-    from {
-        display: none;
-        transform: translateY(50%);
-    }
-
-    to {
-        display: block;
-        transform: translateY(0);
-    }
-}
+@import "animations.css";
 
 .underline-hover:hover {
     text-decoration: underline !important;
@@ -251,28 +240,31 @@ input::-webkit-search-cancel-button:hover {
 .btn-outline:hover {
     color: #0d6dfd83;
     border-color: #0d6dfd83;
+
 }
 
 
 /* login */
 
-.login-form {
+.login-modal {
     position: fixed;
     left: 50%;
     transform: translateX(-50%);
     border-radius: 15px;
-    height: 80%;
+    min-height: 500px;
+    min-width:380px;
+    pointer-events: auto;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    outline: 0;
+    background: #152034;
+    font-weight: 900;
+    font-size: 10pt;
+}
+
+.login-form{
     display: flex;
     flex-direction: column;
     gap: 15px;
-    pointer-events: auto;
-    background: #fff;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    outline: 0;
-    background: rgba(255, 255, 255, 1);
-    width: 30%;
-    font-weight: 900;
-    font-size: 10pt;
 }
 
 .login-input {
@@ -341,12 +333,11 @@ input::-webkit-search-cancel-button:hover {
 
 .line span {
     position: absolute;
-    background: rgb(255, 255, 255);
+    background: #152034;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-
     width: 45px;
 }
 
@@ -357,19 +348,20 @@ input::-webkit-search-cancel-button:hover {
     left: 50%;
     transform: translateX(-50%);
     border-radius: 15px;
-    width: 50%;
-    height: 90%;
+    min-width:380px;
+    min-height:550px;
     display: flex;
     flex-direction: column;
     gap: 15px;
     pointer-events: auto;
-    background: #fff;
     border: 1px solid rgba(0, 0, 0, 0.2);
     outline: 0;
-    background: rgba(255, 255, 255, 1);
-    width: 30%;
+    background: #151c26;
     font-weight: 900;
     font-size: 10pt;
+    color:#fff;
+    padding-right:5%;
+    padding-left:5%;
 }
 
 .register-input {
@@ -971,6 +963,16 @@ input[type=checkbox]:checked{
 .hide-scrollbar{
     scrollbar-width:none;
     -ms-overflow-style:none;
-
 }
 
+.bg-light-blue{
+    background-color:#E3EBF9;
+}
+
+.lighting-hover:hover{
+    filter:brightness(2);
+}
+
+.overflow-y-auto{
+    overflow-y:auto;
+}

@@ -15,17 +15,18 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->nullable();
             $table->string('username')->unique()->default('');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
-            $table->string('introduction');
+            $table->string('introduction')->nullable();
             $table->integer('score')->default(0);
             $table->morphs('userable');
-            $table->foreignId('image_id')->constrained()
+            $table->unsignedBigInteger('image_id')->nullable();
+            $table->foreign('image_id')->references('id')->on('images')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
         });

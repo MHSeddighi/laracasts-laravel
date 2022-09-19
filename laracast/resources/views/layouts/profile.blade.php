@@ -1,5 +1,5 @@
 <style>
-    .line {
+    .vertical-line {
         width: 1px;
         background-color: var(--bs-gray-900);
         margin-bottom: 20px;
@@ -18,6 +18,7 @@
         background-color: #0D131D;
         border: 1px solid rgba(0, 0, 0, 0.2);
         outline: 0;
+        animation:profilePopup 0.3s;
     }
 
     .dec-none a {
@@ -105,7 +106,7 @@
                     @csrf
                 </form>
             </div>
-            <div class="line"></div>
+            <div class="vertical-line"></div>
             <div>
 
             </div>

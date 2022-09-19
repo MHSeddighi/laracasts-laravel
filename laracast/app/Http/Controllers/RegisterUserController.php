@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\LoginRequest;
+use App\Models\Tutor;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -16,17 +17,20 @@ class RegisterUserController extends Controller
         return view('auth.register');
     }
 
-    public function store(LoginRequest $request){    
+    public function store(LoginRequest $request){
         $request->validate([
             'username' => 'required|string|min:3|unique:users',
             'email'=> 'required|email|unique:users',
             'password'=>['required',Password::default()]
         ]);
 
+        $tutor=Tutor::create();
         $user=User::create([
             'username'=> $request->username,
             'email'=> $request->email,
             'password'=>  Hash::make($request->password),
+            'userable_type'=>$request->occuption,
+            'userable_id'=>$tutor->id
         ]);
 
         event(new Registered($user));
