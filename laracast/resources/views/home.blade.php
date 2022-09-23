@@ -200,7 +200,5 @@
 </div>
 
 @include('topic-cards')
-<form class="" method="post" action="">
-    <input type="file" />
-</form>
+
 @endsection

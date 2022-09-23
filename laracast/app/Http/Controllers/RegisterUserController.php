@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\LoginRequest;
+use App\Models\Developer;
 use App\Models\Tutor;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
@@ -21,16 +22,20 @@ class RegisterUserController extends Controller
         $request->validate([
             'username' => 'required|string|min:3|unique:users',
             'email'=> 'required|email|unique:users',
-            'password'=>['required',Password::default()]
+            'password'=>['required',Password::default(),'confirmed']
         ]);
 
-        $tutor=Tutor::create();
+        if($request->occuption=="tutor"){
+            $user=Tutor::create();
+        }else{
+            $user=Developer::create();
+        }
         $user=User::create([
             'username'=> $request->username,
             'email'=> $request->email,
             'password'=>  Hash::make($request->password),
             'userable_type'=>$request->occuption,
-            'userable_id'=>$tutor->id
+            'userable_id'=>$user->id
         ]);
 
         event(new Registered($user));

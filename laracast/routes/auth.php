@@ -34,15 +34,23 @@ Route::get('auth/google/callback', [App\Http\Controllers\GoogleLogin::class, 'ca
 
 Route::get('/forgot-password',[\App\Http\Controllers\PasswordResetController::class,'create'])
     ->middleware('guest')
-    ->name('auth.reset-password');
+    ->name('auth.forgot-password');
 
 Route::post('/forgot-password',[\App\Http\Controllers\PasswordResetController::class,'sendResetLink'])
     ->middleware('guest');
 
-Route::view('/reset-password',[\App\Http\Controllers\NewPasswordController::class,'create'])
-    ->middleware('guest');
+Route::view('/reset-password','auth.reset-password')
+    ->middleware('guest')
+    ->name('auth.reset-password');
+
 Route::post('/reset-password',[\App\Http\Controllers\NewPasswordController::class,'resetPassword'])
     ->middleware('guest');
 
+Route::view('/new-password','auth.new-password')
+    ->middleware('guest')
+    ->name('auth.new-password');
+
+Route::post('/new-password',[\App\Http\Controllers\NewPasswordController::class,'newPassword'])
+    ->middleware('guest');
 
 Route::view('/dashbord', 'dashbord')->name('dashbord');

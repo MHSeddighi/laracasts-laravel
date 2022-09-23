@@ -1,10 +1,11 @@
 <div class="modal-dialog">
-    <div class="login-modal hide-scrollbar p-4 pt-5">
+    <div class="login-modal p-4 pt-5 ">
         <button class="outline-0 border-0 close-btn close-hover p-1 lighting-hover parent-right-top" data-bs-dismiss="modal">
             <svg width="25px" height="25px" color="#fff">
                 <use xlink:href="{{ asset('images/icons/close.svg') }}#close"></use>
             </svg>
         </button>
+        <div class="modal-body">
         <form class="login-form text-white-50" action="{{ route('login.store') }}" method="Post">
             @csrf
             <span class="fs-2 fw-bolder text-center text-white mb-2" style="font-family:cabinet;">Welcome to the
@@ -34,7 +35,7 @@
                     <input class="form-check-input" type="checkbox" id="remember-me" name="remember">
                     <label class="form-check-label underline-hover fs-6" for="remember-me">{{__('Remember me')}}</label>
                 </div>
-                <a href="{{ route('auth.reset-password') }}" class="underline-hover">{{__("Forgot password?")}} </a>
+                <a href="{{ route('auth.forgot-password') }}" class="underline-hover">{{__("Forgot password?")}} </a>
             </div>
 
             <button type="submit" class="btn submit btn-primary fs-6 w-100 login-button" id="submit">
@@ -53,5 +54,6 @@
                 <span class="align-self-center">{{ __('Continue with Facebook')}}</span>
             </a>
         </form>
+        </div>
     </div>
 </div>

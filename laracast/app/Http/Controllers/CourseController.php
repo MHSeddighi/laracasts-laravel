@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Course;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\User ; 
+use App\Models\User ;
 use Illuminate\Support\Facades\Storage;
 
 class CourseController extends Controller
@@ -13,10 +13,18 @@ class CourseController extends Controller
     public function index($slug)
     {
         $course = Course::where('slug', $slug)->first();
+        $currentUserId=Auth::id();
+        $currentUser=null;
+
+        if (!is_null($currentUserId)) {
+            $currentUser = User::find($currentUserId);
+        }
+
         return view('course.course')->with([
             'course' => $course,
             'tutor' => $course->tutor->user,
-            'tutor_image' => $course->tutor->user->image->src
+            'tutor_image' => $course->tutor->user->image->src,
+            'user'=>$currentUser
         ]);
     }
 

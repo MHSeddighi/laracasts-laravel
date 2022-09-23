@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
 
 Route::get('/series/{slug}/episodes/{number}', [CourseController::class, 'beginCourse'])
     ->name('course.episode');

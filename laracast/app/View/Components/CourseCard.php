@@ -40,7 +40,15 @@ class CourseCard extends Component
     public function render()
     {
         $course=Course::where('slug',slugify($this->title,"-"))->first();
-
-        return view('components.course-card')->with('course',$course);
+        $courseLength=0;
+        if(!is_null($course)){
+            foreach ($course->episodes as $episode){
+                $courseLength+=$episode->video->duration;
+            }
+        }
+        return view('components.course-card')->with([
+            'course'=>$course,
+            'courseLength'=>convertSecondsToClockTime($courseLength)
+        ]);
     }
 }

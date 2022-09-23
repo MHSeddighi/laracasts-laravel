@@ -16,7 +16,7 @@ class PasswordResetController extends Controller
 {
     public function create()
     {
-        return view('auth.reset-password');
+        return view('auth.forgot-password');
     }
 
     public function sendResetLink(Request $request){
@@ -39,7 +39,7 @@ class PasswordResetController extends Controller
             if($verify->exists()){
                 $verify->delete();
             }
-            $token=Str::random(64);
+            $token=Str::random(6);
             $passwordRest=DB::table('password_resets')->insert([
                 'email'=>$email,
                 'token'=>$token,
@@ -47,13 +47,15 @@ class PasswordResetController extends Controller
             ]);
             if($passwordRest){
                 Mail::to($email)->send(new ResetPassword($token));
-                return new JsonResponse(
-                    [
-                        'success' => true,
-                        'message' => "Please check your email for a 6 digit pin"
-                    ],
-                    200
-                );
+                session(['email'=>$email]);
+                return redirect(route('auth.reset-password'));
+//                return new JsonResponse(
+//                    [
+//                        'success' => true,
+//                        'message' => "Please check your email for a 6 digit pin"
+//                    ],
+//                    200
+//                );
             }
         }else{
             return new JsonResponse([

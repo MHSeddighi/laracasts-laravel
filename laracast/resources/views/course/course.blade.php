@@ -100,8 +100,8 @@
                     <a href="#" class="btn blur-btn mt-2 mb-5 ">{{$course->category}}</a>
                     <p class="course-description">{{$course->description}}</p>
                     <a href="{{ route('course.episode',['slug'=>$course->slug,'number'=>1]) }}"
-                        class="btn blur-btn my-3 bg-white text-black-c px-4 me-2 text-center">
-                        <svg class="me-2 my-auto" width="10" height="12">
+                        class="btn blur-btn my-3 text-white text-black-c px-4 py-2 me-2 text-center">
+                        <svg class="me-2 my-auto" width="10" height="12" fill="#fff">
                             <use xlink:href="{{asset('images/play-button2.svg#play-button2')}}"></use>
                         </svg>
                         Begin Series
@@ -144,26 +144,36 @@
                 </a>
             </div>
             @foreach ($course->episodes as $episode)
-            <div class="d-flex justify-content-start border-radius-3 p-4 my-2 bg-blue-c gap-5 w-100">
-                <div class="d-flex circle border-blue outline-blue p-3 align-self-center justify-content-center position-relative success-hover"
-                    style="background:#193152;">
-                    <div class="transform-vertical-center">{{ sprintf("%02d",$episode->number) }}</div>
-                    <div class="opacity-0">
-                        <svg fill="#fff" width="20px" height="20px">
-                            <use xlink:href="{{ asset('images/success.svg') }}#success"></use>
-                        </svg>
-                    </div>
-                    <!-- <div></div>  not uploaded yet-->
-                </div>
+            <div class="d-flex justify-content-start border-radius-3 p-4 my-2 bg-blue-c gap-5 w-100 align-items-center">
+                @php
+                    if(is_null($user)){
+                        $percent=0;
+                    }else{
+                        $watchesList=$user->watches->where('course_id',$course->id);
+                        if(is_null($watchesList)){
+                            $percent=0;
+                        }else{
+                            $pivotEpisode=$watchesList->firstWhere('number',$episode->number);
+                            if(is_null($pivotEpisode)){
+                                $percent=0;
+                            }else{
+                                $percent=$pivotEpisode->pivot->percent;
+                            }
+                        }
+                    }
+                @endphp
+                <x-radial-progress :episode="$episode" :episodeNumber="$episode->number" page="course"
+                                   :percent="$percent">
+                </x-radial-progress>
                 <section>
                     <h4>{{ $episode->title }}</h4>
                     <p class="mt-3 position-relative font-size-12 clamp">{{ $episode->description }}</p>
                     <span class="ms-3 text-gray-900 font-size-10 mq-860-d-none">EPISODE {{ $episode->number}}</span>
                     <span class="ms-3 text-gray-900 font-size-10 position-relative mq-860-d-none">
                         <svg width="12" height="12" fill="#BAC6CC" class="transform-vertical-center">
-                            <use xlink:href="{{asset(" images/course cards/clock-icon.svg")}}#clock"></use>
+                            <use xlink:href="{{asset('images/course cards/clock-icon.svg')}}#clock"></use>
                         </svg>
-                        <spanc class="ms-3">{{ convertSecondsToClockTime($episode->video->duration) }} minutes
+                        <span class="ms-3">{{ convertSecondsToClockTime($episode->video->duration) }} minutes</span>
                     </span>
                     </span>
                 </section>

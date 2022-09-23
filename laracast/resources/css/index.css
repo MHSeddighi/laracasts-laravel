@@ -251,14 +251,15 @@ input::-webkit-search-cancel-button:hover {
     left: 50%;
     transform: translateX(-50%);
     border-radius: 15px;
-    min-height: 500px;
-    min-width:380px;
+    height: 550px;
+    width:400px;
     pointer-events: auto;
     border: 1px solid rgba(0, 0, 0, 0.2);
     outline: 0;
     background: #152034;
     font-weight: 900;
     font-size: 10pt;
+    overflow-y:auto;
 }
 
 .login-form{
@@ -348,8 +349,11 @@ input::-webkit-search-cancel-button:hover {
     left: 50%;
     transform: translateX(-50%);
     border-radius: 15px;
-    min-width:380px;
-    min-height:550px;
+    width:400px;
+    height:600px;
+    min-width:400px;
+    max-height:100vh;
+    overflow-y:auto;
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -432,34 +436,34 @@ input::-webkit-search-cancel-button:hover {
 }
 
 
-.play-button:hover>div {
+.play-button:hover div {
     visibility: hidden;
 }
 
-.play-button:hover>button {
+.play-button:hover button {
     display: block !important;
     animation: popup 0.3s linear;
 }
 
-.play-button>button {
+.play-button button {
     position: absolute;
     bottom: 0;
     width: 100%;
-    background-color: #EBEDF1;
-    border: solid 1px transparent;
+    background-color: #EBEDF1 !important;
+    border: solid 1px transparent !important;
 }
 
 .margin-1 {
     margin: 1px;
 }
 
-.play-button>button:hover {
-    border: solid 1px blue;
-    color: blue;
+.play-button button:hover {
+    border: solid 1px blue !important;
+    color: blue !important;
     transition: color, border 0.3s;
 }
 
-.play-button>button:hover svg {
+.play-button button:hover svg {
     fill: blue;
     transition: fill 0.3s;
 }
@@ -626,6 +630,8 @@ a.active {
     border-radius: 24px;
     font-weight: 500;
     font-size: 10pt;
+    border:0;
+    outline:0;
     cursor: pointer;
     padding-right: 10px;
     padding-left: 10px;
@@ -634,8 +640,8 @@ a.active {
 }
 
 .blur-btn:hover {
-    color: #6464da;
-    background-color: rgb(33, 52, 82, 0.3);
+    color: #6464da !important;
+    background-color: rgb(33, 52, 82, 0.3) !important;
     transition: background-color, border-color 0.2s ease-in-out;
     /*box-shadow:0 0 0 1px #6464da;*/
     border: 1px solid #6464da;
@@ -770,12 +776,12 @@ a.active {
     outline: 2px solid #193152;
 }
 
-.success-hover:hover #crp-hover {
+.success-hover:hover .crp-hover {
     opacity: 1 !important;
     transition: opacity 0.2s ease-out;
 }
 
-.success-hover:hover #crp-number {
+.success-hover:hover .crp-number {
     opacity: 0 !important;
     transition: opacity 0.2s ease-out;
 }
@@ -975,4 +981,10 @@ input[type=checkbox]:checked{
 
 .overflow-y-auto{
     overflow-y:auto;
+}
+
+.new-password-form{
+    width:450px;
+
+
 }
