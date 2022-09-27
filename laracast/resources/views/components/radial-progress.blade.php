@@ -29,7 +29,7 @@
     @endif
     @elseif(strcasecmp($page,"course")==0)
         @if($percent==100)
-        <div class="inner transform-center w-100 h-100 " style="background:#ec454f;">
+        <div class="inner transform-center w-100 h-100" onclick="sendPostRequest('{{ route('update.percent',['course_slug'=>$episode->course->slug,'number'=>$episode->number]) }}')" style="background:#ec454f;">
             <div class="opacity-1 transform-center crp-click" >
                 <svg fill="#fff" width="20px" height="20px">
                     <use xlink:href="{{ asset('images/success.svg') }}#success"></use>
@@ -37,7 +37,7 @@
             </div>
         </div>
         @else
-        <div class="inner transform-center success-hover">
+        <div class="inner transform-center success-hover" onclick="sendPostRequest('{{ route('update.percent',['course_slug'=>$episode->course->slug,'number'=>$episode->number]) }}')">
             <div class="transform-center crp-number">{{ sprintf("%02d",$episodeNumber) }}</div>
             <div class="opacity-0 transform-center crp-hover">
                 <svg fill="#fff" width="20px" height="20px">
@@ -56,5 +56,13 @@
         degree = percent * 360 / 100;
         outer = document.querySelector(`#episode-${episodeNumber}`);
         outer.style.background = `conic-gradient(#ec454f 0deg,#ec454f ${degree}deg,black ${degree}deg)`;
+    }
+    function sendPostRequest(url){
+        fetch(url,{
+            method:"POST",
+            body:{
+                _token:"YOAig474HLAl50G5brlOWKZQGcN1bh74qXvk3YV8"
+            }
+        });
     }
 </script>

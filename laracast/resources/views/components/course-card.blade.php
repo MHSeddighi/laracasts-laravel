@@ -32,11 +32,11 @@
         </button>
         <div class="font-gray font-size-10 p-2">
             <svg width="12" height="12" fill="#666">
-                <use xlink:href="{{asset('images/course cards/books-icon.svg#books')}}"> </use>
+                <use xlink:href="{{asset('images/course cards/books-icon.svg#books')}}"></use>
             </svg>
             <span class="me-4 ms-1"> {{ $course->lessons }} lessons</span>
             <svg width="12" height="12" fill="#666">
-                <use xlink:href="{{asset('images/course cards/clock-icon.svg#clock')}}"> </use>
+                <use xlink:href="{{asset('images/course cards/clock-icon.svg#clock')}}"></use>
             </svg>
             <time class="ms-1"> {{ $courseLength }} </time>
         </div>

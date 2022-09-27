@@ -24,4 +24,7 @@ Route::get('/series/{slug}/episodes/{number}', [CourseController::class, 'beginC
 Route::get('/series/{slug}', [CourseController::class, 'index'])
     ->name('course');
 
+Route::post('/update/{course_slug}/{number}',[CourseController::class, 'updatePercent'])
+    ->name('update.percent');
+
 require __DIR__ . '/auth.php';

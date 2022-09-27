@@ -48,11 +48,20 @@ class CourseController extends Controller
         ]);
     }
 
-    public function create()
+    public function updatePercent($course_slug,$number)
     {
-    }
-
-    public function add_video()
-    {
+        $currentUserId=Auth::id();
+        $course=Course::where('slug',$course_slug)->first();
+        $currentUser=null;
+        if (!is_null($currentUserId)) {
+            $currentUser = User::find($currentUserId);
+            if(!is_null($course_slug)){
+                $eps=$currentUser->watches->firstWhere(['course_id'=>$course->id,'number'=>$number])->first();
+                if(!is_null($eps)){
+                    $eps->pivot->percent=100;
+                    $eps->pivot->save();
+                }
+            }
+        }
     }
 }
